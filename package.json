@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.12.3",
+    "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@types/alpinejs": "^3.13.2",
     "alpinejs": "^3.7.2",
     "astro": "^3.1.4",
+    "astro-compress": "^2.0.15",
     "tailwindcss": "^3.0.24"
   }
 }
