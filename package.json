@@ -16,7 +16,6 @@
     "@types/alpinejs": "^3.13.2",
     "alpinejs": "^3.7.2",
     "astro": "^3.1.4",
-    "astro-compress": "^2.0.15",
     "tailwindcss": "^3.0.24"
   }
 }
