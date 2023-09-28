@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bio-silas.vercel.app/sitemap-index.xml

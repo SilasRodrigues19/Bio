@@ -17,13 +17,35 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
 		<title>{title}</title>
+
+    <!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<!-- <meta name="twitter:image" content="URL_DA_IMAGEM" /> -->
+
+		<!-- LinkedIn Meta Tags -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content="https://bio-silas.vercel.app/" />
+		<!-- <meta property="og:image" content="URL_DA_IMAGEM" /> -->
+
+    
 		<ViewTransitions />
 	</head>
-	<body class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition">
+	<body class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans">
 
 		<Header />
 
@@ -49,8 +71,6 @@ const { title, description } = Astro.props;
           this.isDark = typeof localStorage !== 'undefined' && localStorage.getItem('theme')
             ? localStorage.getItem('theme') === 'dark'
             : window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            console.log(localStorage.getItem('theme'));
 
         },
 
