@@ -1,0 +1,83 @@
+---
+
+const links = [
+  {
+    number: '01',
+    name: 'About',
+    target: '#about'
+  },
+  {
+    number: '02',
+    name: 'Social',
+    target: '#social'
+  },
+  {
+    number: '03',
+    name: 'Contact',
+    target: '#contact'
+  }
+]
+
+---
+
+<header>
+  <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
+    <div class="flex">
+      <a 
+      href="#"
+      rel="noopener noreferrer"
+      class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+    >
+        <span class="sr-only">Silas Rodrigues</span>
+        <img 
+          :class="{ 'invert': ($store.theme.isDark) }"
+          class="h-8 w-auto"
+          width="85" 
+          height="35" 
+          src="/assets/logo.svg"
+          alt="Silas Rodrigues"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    </div>
+
+    <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
+      <button
+        type="button"
+        class='focus-visible:ring-foreground focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-offset-transparent'
+        x-data
+        @click="$store.theme.toggle()"
+      >
+        <span class="sr-only">Toggle theme</span>
+        <div class="flex items-center gap-1">
+          <svg 
+            width="30" 
+            height="30" 
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class='h-10 w-10 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
+          >
+            <image 
+              xlink:href="/assets/sun.svg" 
+              width="30" 
+              height="30" 
+            />
+          </svg>
+
+          <svg 
+            width="30" 
+            height="30" 
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class='h-10 w-10 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'
+          >
+            <image xlink:href="/assets/moon.svg" width="30" height="30" />
+          </svg>
+
+        </div>
+      </button>
+    </div>
+
+  </div>
+</header>

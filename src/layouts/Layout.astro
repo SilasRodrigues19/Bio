@@ -1,0 +1,70 @@
+---
+
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/layout/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition">
+
+		<Header />
+
+		<slot />
+
+
+		<style is:global>
+
+			[x-cloak], [x-hidden] {
+        display: none;
+      }
+
+		</style>
+
+		<script>
+      import Alpine from 'alpinejs';
+      import collapse from '@alpinejs/collapse';
+
+      Alpine.plugin(collapse);
+
+      Alpine.store('theme', {
+        init() {
+          this.isDark = typeof localStorage !== 'undefined' && localStorage.getItem('theme')
+            ? localStorage.getItem('theme') === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            console.log(localStorage.getItem('theme'));
+
+        },
+
+        isDark: false,
+
+        toggle() {
+          this.isDark = !this.isDark;
+          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+        },
+      });
+
+      window.Alpine = Alpine;
+      Alpine.start();
+
+    </script>
+	</body>
+</html>
