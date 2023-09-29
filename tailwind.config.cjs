@@ -12,7 +12,7 @@ module.exports = {
       primary: colors.slate,
     },
     fontFamily: {
-      sans: ["'Poppins'", 'sans-serif'],
+      sans: ["'Saira'", 'sans-serif'],
     },
     extend: {},
   },
