@@ -1,9 +1,7 @@
 export async function getPageContent(url) {
-  // This is a really scrappy way to do this.
-  // Don't do this in production!
+
   const response = await fetch(url);
   const text = await response.text();
-  // Particularly as it uses regexp
   return /<body[^>]*>([\w\W]*)<\/body>/.exec(text)[1];
 }
 
@@ -23,9 +21,7 @@ function isBackNavigation(navigateEvent) {
   return false;
 }
 
-// Intercept navigations
-// https://developer.chrome.com/docs/web-platform/navigation-api/
-// This is a naive usage of the navigation API, to keep things simple.
+
 export async function onLinkNavigate(callback) {
   navigation.addEventListener('navigate', (event) => {
     const toUrl = new URL(event.destination.url);
@@ -57,9 +53,7 @@ export function getLink(href) {
   );
 }
 
-// This helper function returns a View-Transition-like object, even for browsers that don't support view transitions.
-// It won't do the transition in unsupported browsers, it'll act as if the transition is skipped.
-// It also makes it easier to add class names to the document element.
+
 export function transitionHelper({
   skipTransition = false,
   classNames = '',

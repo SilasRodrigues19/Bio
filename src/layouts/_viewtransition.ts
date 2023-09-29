@@ -4,7 +4,7 @@ import {
   transitionHelper,
 } from '../scripts/view-transition-utils';
 
-const LINE_COUNT = 3;
+const LINE_COUNT = 5;
 const STAGGER_STEP = 150;
 const STOPOVER = 200;
 const WIPE_SPEED = 400;
@@ -13,6 +13,8 @@ onLinkNavigate(
   async ({ toPath, isBack }: { toPath: string; isBack: boolean }) => {
     const LINES: HTMLDivElement[] = [];
     const content = await getPageContent(toPath);
+    const theme = localStorage.getItem('theme');
+
     // Create line elements for the transition
     for (let l = 0; l < LINE_COUNT; l++) {
       const LINE = Object.assign(document.createElement('div'), {
@@ -24,7 +26,7 @@ onLinkNavigate(
         left: 0;
         right: 0;
         height: ${100 / LINE_COUNT + 0}vh;
-        background: hsl(0 0% 100%);
+        background: ${theme === 'dark' ? '#f1f5f9' : '#020617'};
         transform-origin: 50% 50%;
       `,
       });
