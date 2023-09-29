@@ -4,17 +4,17 @@ const links = [
   {
     number: '01',
     name: 'About',
-    target: '#about'
+    target: '/about'
   },
   {
     number: '02',
     name: 'Social',
-    target: '#social'
+    target: '/social'
   },
   {
     number: '03',
     name: 'Contact',
-    target: '#contact'
+    target: '/contact'
   }
 ]
 
@@ -23,12 +23,12 @@ const links = [
 <header
    x-data="{ open: false }"
   class="transition shadow-md fixed w-full z-10"
-  :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
+  :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950 h-32': !(open) }"
 >
   <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
     <div class="flex">
       <a 
-      href="#"
+      href="/"
       rel="noopener noreferrer"
       class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
     >
@@ -49,18 +49,18 @@ const links = [
     <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
       <button
         type="button"
-        class='focus-visible:ring-foreground focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-offset-transparent'
+        class='text-primary-950 dark:text-primary-200 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none'
         x-data
         @click="$store.theme.toggle()"
       >
         <span class="sr-only">Toggle theme</span>
-        <div class="flex items-center gap-1">
           <svg 
             width="30" 
             height="30" 
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             class='h-10 w-10 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
+            :class="$store.theme.isDark ? 'mt-0' : 'mt-2'"
           >
             <image 
               xlink:href="/assets/sun.svg" 
@@ -83,13 +83,11 @@ const links = [
             />
           </svg>
 
-        </div>
       </button>
 
       <button
         type="button"
         class="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
-        :class="$store.theme.isDark ? 'mb-0' : 'mb-2'"
         @click="open = !open"
         @mousedown="if (open) $event.preventDefault()"
         aria-controls="website-menu"
@@ -105,9 +103,9 @@ const links = [
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           aria-hidden="true"
-          viewBox="0 0 1024 1024"
+          viewBox="0 0 24 24"
         >
-          <path fill="currentColor" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H608zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H608z"/>
+          <path fill="currentColor" d="M22 18.005c0 .55-.446.995-.995.995h-8.01a.995.995 0 0 1 0-1.99h8.01c.55 0 .995.445.995.995ZM22 12c0 .55-.446.995-.995.995H2.995a.995.995 0 1 1 0-1.99h18.01c.55 0 .995.446.995.995Zm-.995-5.01a.995.995 0 0 0 0-1.99H8.995a.995.995 0 1 0 0 1.99h12.01Z"/>
         </svg>
 
         <svg 
@@ -117,9 +115,9 @@ const links = [
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           aria-hidden="true"
-          viewBox="0 0 32 32"
+          viewBox="0 0 16 16"
         >
-          <path fill="currentColor" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4l-1.6 1.6z"/>
+          <path fill="currentColor" fill-rule="evenodd" d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94L5.28 4.22Z" clip-rule="evenodd"/>
         </svg>
 
       </button>
@@ -137,7 +135,7 @@ const links = [
   >
     <div class="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
       <div
-        class="bg-primary-500/10 dark:bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex"
+        class="hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex border-dotted border-2 border-primary-500"
       >
         <p
           class="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl italic leading-loose"
@@ -151,21 +149,22 @@ const links = [
             <a
               @click="open = false"
               href={link.target}
-              class="text-primary-950 dark:text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
+              class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
             >
               <div class="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                 <div class="flex items-center gap-6">
-                  <span class="text-xs">{link.number}</span>
-                  <span class="group-hover:underline font-normal">{link.name}</span>
+                  <span class="text-xs text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 group-hover:scale-150 transition-transform">{link.number}</span>
+                  <span class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal">{link.name}</span>
                 </div>
-                <svg
-                  class="text-primary-600 dark:text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg 
+                  class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 h-6 w-6 sm:h-8 sm:w-8 group-hover:-translate-x-2 transition-transform"
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="24" 
+                  height="24" 
                   viewBox="0 0 24 24"
-                  fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                  <path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"/>
                 </svg>
               </div>
             </a>

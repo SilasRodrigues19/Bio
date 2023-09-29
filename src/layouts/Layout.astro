@@ -25,7 +25,7 @@ const { title, description } = Astro.props;
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 		<title>{title}</title>
 
@@ -45,11 +45,14 @@ const { title, description } = Astro.props;
     
 		<ViewTransitions />
 	</head>
-	<body class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans">
+	<body class="min-h-screen h-full flex flex-col bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans">
 
+		
 		<Header />
+		<main>
+			<slot />
+		</main>
 
-		<slot />
 
 
 		<style is:global>
@@ -87,4 +90,5 @@ const { title, description } = Astro.props;
 
     </script>
 	</body>
-</html>
+	</html>
+	<script>import './_viewtransition.ts'</script>
