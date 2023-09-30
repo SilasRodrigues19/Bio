@@ -1,6 +1,6 @@
 ---
 
-import GitHub from "../GitHub.astro";
+import Testing from "../Testing.astro";
 
 const links = [
   {
@@ -50,7 +50,7 @@ const links = [
     
     <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
 
-      <!-- <GitHub user="SilasRodrigues19" repo="Portfolio" /> -->
+      <!-- <Testing user="SilasRodrigues19" repo="Portfolio" /> -->
       
       <button
         type="button"
@@ -64,8 +64,7 @@ const links = [
             height="30" 
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class='h-10 w-10 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
-            :class="$store.theme.isDark ? 'mt-0' : 'mt-2'"
+            class='h-10 w-10 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 mt-2 dark:mt-0'
           >
             <image 
               xlink:href="/assets/sun.svg" 
@@ -79,7 +78,7 @@ const links = [
             height="30" 
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class='h-10 w-10 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'
+            class='h-10 w-10 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 dark:mt-2'
           >
             <image 
               xlink:href="/assets/moon.svg" 
@@ -102,7 +101,7 @@ const links = [
 
         <svg 
           x-cloak
-          class="h-8 w-8"
+          class="h-8 w-8 text-primary-950/70 dark:text-primary-200/70"
           :class="{ 'hidden': open, 'block': !(open) }"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -114,7 +113,7 @@ const links = [
 
         <svg 
           x-cloak
-          class="h-8 w-8"
+          class="h-8 w-8 text-primary-950/70 dark:text-primary-200/70"
           :class="{ 'block': open, 'hidden': !(open) }"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"

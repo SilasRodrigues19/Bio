@@ -16,9 +16,9 @@
 		</g>
 	</g>
   <style>
-      g { stroke: #f1f5f9; }
+      g { stroke: rgb(226 232 240 / 0.7); }
       @media (prefers-color-scheme: dark) {
-          g { stroke: #0f172a; }
+          g { stroke: rgb(2 6 23 / 0.7); }
       }
   </style>
 </svg>

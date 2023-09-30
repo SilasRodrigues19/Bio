@@ -64,15 +64,15 @@ const socialLinks = [
   <section class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100 py-16 sm:py-20">
 		<div class="mx-auto max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8 mt-12">
 			<div class="flex flex-col gap-4 sm:gap-6 my-4">
-				<h1 class="text-4xl font-medium tracking-tight sm:text-3xl lg:text-5xl">Link me.</h1>
-				<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl">
-					Most relevant personal information.
+				<h1 class="text-primary-950/70 dark:text-primary-200/70 text-4xl font-medium tracking-tight sm:text-3xl lg:text-5xl">Link me.</h1>
+				<p class="text-primary-950/70 dark:text-primary-200/70 max-w-xl text-lg sm:text-xl">
+					Most relevant personal information. 
 				</p>
     	</div>
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
 				{links.map((link) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
 							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
 						</a>
 					</li>
@@ -89,7 +89,7 @@ const socialLinks = [
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
 				{codeLinks.map((link) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
 							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
 						</a>
 					</li>
@@ -98,14 +98,14 @@ const socialLinks = [
 
 			<hr class="h-px my-8 bg-primary-200 border-1 border-primary-200 dark:bg-primary-900 border-1 dark:border-primary-900 dark:bg-gray-700">
 
-			<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl my-4">
+			<p class="text-primary-950/70 dark:text-primary-200/70 max-w-xl text-lg sm:text-xl my-4">
 					Social media.
 			</p>
 
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
 				{socialLinks.map((link) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
 							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
 						</a>
 					</li>
