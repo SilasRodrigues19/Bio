@@ -22,3 +22,7 @@ pnpm-lock.yaml
 
 # macOS-specific files
 .DS_Store
+
+
+# Testing Astro functionality
+src/components/Testing.astro
