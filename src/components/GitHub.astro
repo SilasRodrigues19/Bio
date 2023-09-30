@@ -1,0 +1,15 @@
+---
+
+interface Props {
+  user: string;
+  repo: string;
+  style?: 'flat' | 'flat-square' | 'for-the-badge' | 'plastic' | 'social';
+}
+
+const { user, repo, style = 'for-the-badge' } = Astro.props;
+
+---
+
+<a href={`https://github.com/${user + '/' + repo}`} rel="noopener noreferrer">
+  <img src={`https://img.shields.io/github/stars/${user + '/' + repo}?style=${style}`} alt="Bio - GitHub Stars" loading="lazy">
+</a>

@@ -1,5 +1,7 @@
 ---
 
+import GitHub from "../GitHub.astro";
+
 const links = [
   {
     number: '01',
@@ -23,7 +25,7 @@ const links = [
 <header
    x-data="{ open: false }"
   class="transition shadow-md fixed w-full z-10"
-  :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950 h-32': !(open) }"
+  :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
 >
   <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
     <div class="flex">
@@ -45,8 +47,11 @@ const links = [
         />
       </a>
     </div>
-
+    
     <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
+
+      <!-- <GitHub user="SilasRodrigues19" repo="Portfolio" /> -->
+      
       <button
         type="button"
         class='text-primary-950 dark:text-primary-200 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none'
@@ -89,7 +94,6 @@ const links = [
         type="button"
         class="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
         @click="open = !open"
-        @mousedown="if (open) $event.preventDefault()"
         aria-controls="website-menu"
         aria-expanded="false"
         :aria-expanded="open.toString()"
