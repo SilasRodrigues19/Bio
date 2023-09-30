@@ -1,9 +1,118 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const links = [
+	{
+		name: "Portfolio",
+		url: "https://silasrodrigues.vercel.app",
+		dataIcon: "dashicons:portfolio"
+	},
+	{
+		name: "Email",
+		url: "mailto:silasrodrigues.fatec@gmail.com",
+		dataIcon: "ic:round-email"
+	},
+	{
+		name: "Resume",
+		url: "/resume",
+		dataIcon: "ph:file-pdf-duotone"
+	},
+]
+
+const codeLinks = [
+	{
+		name: "Github",
+		url: "https://github.com/SilasRodrigues19",
+		dataIcon: "ri:github-line"
+	},
+	{
+		name: "CodePen",
+		url: "https://codepen.io/silasrodrigues19",
+		dataIcon: "icomoon-free:codepen"
+	},
+]
+
+const socialLinks = [
+	{
+		name: "Linkedin",
+		url: "https://www.linkedin.com/in/silasrodrigues19/",
+		dataIcon: "uim:linkedin-alt"
+	},
+	{
+		name: "Twitter",
+		url: "https://twitter.com/jinuye1",
+		dataIcon: "bi:twitter-x"
+	},
+	{
+		name: "WhatsApp",
+		url: "https://wa.me/5519992576970",
+		dataIcon: "akar-icons:whatsapp-fill"
+	},
+	{
+		name: "Mastodon",
+		url: "https://mastodon.social/@silasrodrigues",
+		dataIcon: "mdi:mastodon"
+	}
+]
+
 ---
 
-<Layout title="Social network" description="my social network">
-  <section class="flex items-center justify-center flex-col bg-red-500 min-h-screen py-12 sm:py-12">
-		<h1 class="dark:text-primary-100 text-primary-950 [font-size:_clamp(2rem,5vw,10rem)]">Social</h1>
-	</section>
+<Layout
+  title='Bio - Silas Rodrigues | Social.'
+  description='Social links page'
+>
+  <section class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100 py-16 sm:py-20">
+		<div class="mx-auto max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8 mt-12">
+			<div class="flex flex-col gap-4 sm:gap-6 my-4">
+				<h1 class="text-4xl font-medium tracking-tight sm:text-3xl lg:text-5xl">Link me.</h1>
+				<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl">
+					Most relevant personal information.
+				</p>
+    	</div>
+			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
+				{links.map((link) => (
+					<li class="flex flex-col gap-2">
+						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
+						</a>
+					</li>
+				))}
+			</ul>
+
+			
+			<hr class="h-px my-8 bg-primary-200 border-1 border-primary-200 dark:bg-primary-900 border-1 dark:border-primary-900 dark:bg-gray-700">
+
+			<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl my-4">
+					Open source projects.
+			</p>
+
+			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
+				{codeLinks.map((link) => (
+					<li class="flex flex-col gap-2">
+						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
+						</a>
+					</li>
+				))}
+			</ul>
+
+			<hr class="h-px my-8 bg-primary-200 border-1 border-primary-200 dark:bg-primary-900 border-1 dark:border-primary-900 dark:bg-gray-700">
+
+			<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl my-4">
+					Social media.
+			</p>
+
+			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
+				{socialLinks.map((link) => (
+					<li class="flex flex-col gap-2">
+						<a target="_blank" href={link.url} class="outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={link.dataIcon}></span> {link.name}
+						</a>
+					</li>
+				))}
+			</ul>
+
+		</div>
+  </section>
+
 </Layout>
