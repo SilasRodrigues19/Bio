@@ -1,5 +1,6 @@
 ---
 
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import Header from '../components/layout/Header.astro';
 
 interface Props {
@@ -42,12 +43,14 @@ const { title, description } = Astro.props;
 		<!-- <meta property="og:image" content="URL_DA_IMAGEM" /> -->
 
 	</head>
-	<body class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans">
+	<body class="relative bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans">
 		
 		<Header />
+		<Breadcrumb />
 		<main>
 			<slot />
 		</main>
+
 
 
 
@@ -58,6 +61,7 @@ const { title, description } = Astro.props;
       }
 
 		</style>
+		
 		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 		
 		<script>
