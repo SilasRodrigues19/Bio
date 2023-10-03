@@ -23,6 +23,7 @@ const links = [
 ---
 
 <header
+  @click="open ? window.scrollTo(0, 0) : null"
    x-data="{ open: false }"
   class="transition shadow-md fixed w-full z-10"
   :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
@@ -36,6 +37,7 @@ const links = [
     >
         <span class="sr-only">Silas Rodrigues</span>
         <img 
+          @click= "open = false"
           :class="{ 'invert': ($store.theme.isDark) }"
           class="h-8 w-auto"
           width="85" 
