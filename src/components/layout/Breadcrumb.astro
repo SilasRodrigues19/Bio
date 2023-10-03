@@ -4,7 +4,7 @@ const pathName = Astro.url.pathname.split('/').pop()
 
 ---
 
-<section class="pt-36">
+<section class="relative pt-36">
   <nav aria-label='breadcrumb' class="absolute xs:right-6 sm:right-36" id="breadcrumb">
     <ol class='inline-flex items-center space-x-4 py-2 text-sm font-medium'>
       {pathName !== '' && (
