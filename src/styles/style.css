@@ -1,0 +1,50 @@
+:root {
+  --overlay-background: #0f172a;
+}
+
+.dark {
+  --overlay-background: #cbd5e1;
+}
+
+.is-changing .transition-main {
+  transition: transform 400ms ease-in-out;
+}
+
+.is-animating.is-leaving .transition-main {
+  transform: translateY(calc(1 * 5vh * var(--overlay-direction, 1)));
+}
+
+.is-animating.is-rendering .transition-main {
+  transform: translateY(calc(-1 * 5vh * var(--overlay-direction, 1)));
+}
+
+
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: var(--overlay-background);
+  opacity: 0;
+  transform: translate3d(0, calc(-1 * 100% * var(--overlay-direction, 1)), 0);
+  pointer-events: none;
+}
+
+.is-changing .transition-overlay {
+  transition: transform 400ms ease-in-out;
+  opacity: 1;
+}
+
+.is-animating .transition-overlay {
+  transform: translate3d(0, 0, 0);
+}
+
+.is-rendering .transition-overlay {
+  transform: translate3d(0, calc(var(--overlay-direction, 1) * 100%), 0);
+}
+
+.to-back {
+  /* --overlay-direction: -1; */
+}
