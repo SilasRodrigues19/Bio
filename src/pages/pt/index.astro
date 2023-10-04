@@ -1,0 +1,28 @@
+---
+
+import Mockup from '../../components/Mockup.astro';
+import Layout from '../../layouts/Layout.astro';
+
+---
+
+<Layout
+  title='Bio - Silas Rodrigues.'
+  description='Social media links, personal links and ways to contact me'
+>
+  <section class="py-2 sm:py-4">
+		<div class="mx-auto max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8 mt-12">
+			<div class="flex flex-col gap-4 sm:gap-6 my-4">
+				<h1 class="text-primary-950/70 dark:text-primary-200/70 text-4xl font-medium tracking-tight sm:text-3xl lg:text-5xl">Silas Rodrigues</h1>
+				<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl">
+					Desenvolvedor Front end
+				</p>
+				<p class="text-primary-950/70 dark:text-primary-200/70  max-w-xl text-lg sm:text-xl">
+					Astro - React - TypeScript - Tailwind - Next.js - Node.js - MongoDB - Prisma
+				</p>
+				<Mockup prefix="$" />
+    	</div>
+    </div>
+  </section>
+</Layout>
+
+<script type="module" src="/app.js"></script>

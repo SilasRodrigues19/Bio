@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import pdf from '/resume.pdf';
+
+---
+<Layout
+  title='Bio - Silas Rodrigues | Currículo.'
+  description='Página de currículo'
+>
+  <section class="py-16 sm:py-32 relative">
+    <div class="mx-auto max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8 mt-12">
+      <embed src={pdf} type="application/pdf" width="100%" height="600px" />
+    </div>
+  </section>
+</Layout>
+
