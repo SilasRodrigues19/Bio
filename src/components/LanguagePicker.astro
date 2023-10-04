@@ -1,0 +1,22 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const currentLang = lang === 'en' ? 'pt' : 'en';
+
+---
+
+<ul>
+  <li>
+    <a
+      id="xd"
+      href={`/${currentLang}/`}
+      x-on:click='setTimeout(() => window.location.reload(), 500)'
+    >
+      <span class="text-primary-700 dark:text-primary-400 text-lg">{currentLang}</span>
+
+    </a>
+  </li>
+</ul>
+
