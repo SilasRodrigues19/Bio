@@ -37,7 +37,7 @@ const links = [
       <a 
       href={`/${lang}`}
       rel="noopener noreferrer"
-      class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+      class="select-none rounded-md p-4 focus-visible:ring-2 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
     >
         <span class="sr-only">Silas Rodrigues</span>
         <img 
@@ -63,7 +63,8 @@ const links = [
       
       <button
         type="button"
-        class='text-primary-950 dark:text-primary-200 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none'
+        class='text-primary-950 dark:text-primary-200 inline-flex h-14 w-14 items-center justify-center rounded-full transition
+        focus-visible:ring-2 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600'
         x-data
         @click="$store.theme.toggle()"
       >
@@ -100,7 +101,8 @@ const links = [
 
       <button
         type="button"
-        class="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
+        class="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition 
+        focus:outline-none focus-visible:ring-2 focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
         @click="open = !open"
         aria-controls="website-menu"
         aria-expanded="false"
@@ -160,14 +162,16 @@ const links = [
         {
           links.map((link) => (
             <a
-              @click="open = false"
+              x-on:click='open = false; setTimeout(() => window.location.reload(), 500)'
               href={link.target}
-              class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
+              class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition sm:py-8 sm:text-4xl
+              focus-visible:outline-none
+              "
             >
-              <div class="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+              <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">
                 <div class="flex items-center gap-6">
                   <span class="text-xs text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 group-hover:scale-150 transition-transform">{link.number}</span>
-                  <span class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal">{link.name}</span>
+                  <span class="p-4 text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal">{link.name}</span>
                 </div>
                 <svg 
                   class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 h-6 w-6 sm:h-8 sm:w-8 group-hover:-translate-x-2 transition-transform"
