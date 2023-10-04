@@ -1,22 +1,26 @@
 ---
 
 import Testing from "../Testing.astro";
+import { getLangFromUrl } from '../../i18n/utils';
+import LanguagePicker from "../LanguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
+
 
 const links = [
   {
     number: '01',
     name: 'About',
-    target: '/about'
+    target: `/${lang}/about/`
   },
   {
     number: '02',
     name: 'Social',
-    target: '/social'
+    target: `/${lang}/social/`
   },
   {
     number: '03',
     name: 'Contact',
-    target: '/contact'
+    target: `/${lang}/contact/`
   }
 ]
 
@@ -31,7 +35,7 @@ const links = [
   <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
     <div class="flex">
       <a 
-      href="/"
+      href={`/${lang}`}
       rel="noopener noreferrer"
       class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
     >
@@ -53,6 +57,9 @@ const links = [
     <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
 
       <!-- <Testing user="SilasRodrigues19" repo="Portfolio" /> -->
+
+      <LanguagePicker />
+
       
       <button
         type="button"
