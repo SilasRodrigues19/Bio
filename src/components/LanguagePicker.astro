@@ -10,11 +10,11 @@ const currentLang = lang === 'en' ? 'pt' : 'en';
 <ul>
   <li>
     <a
-      id="xd"
       href={`/${currentLang}/`}
       x-on:click='setTimeout(() => window.location.reload(), 500)'
+      class="rounded-md focus-visible:ring-2 p-4 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
     >
-      <span class="text-primary-700 dark:text-primary-400 text-lg">{currentLang}</span>
+      <span id="lang" class="text-primary-700 dark:text-primary-400 text-lg">{currentLang}</span>
 
     </a>
   </li>
