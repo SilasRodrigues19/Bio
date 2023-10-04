@@ -2,6 +2,7 @@
 
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import Header from '../components/layout/Header.astro';
+import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
 	title: string;
@@ -10,12 +11,13 @@ interface Props {
 
 const { title, description } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
 import  '../styles/style.css';
 
 ---
 
 <!doctype html>
-<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
+<html lang={lang} x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -53,6 +55,7 @@ import  '../styles/style.css';
 		<Header />
 		<main class="swup transition-main">
 			<Breadcrumb />
+
 			<slot />
 		</main>
 		<div class="overlay transition-overlay"></div>
