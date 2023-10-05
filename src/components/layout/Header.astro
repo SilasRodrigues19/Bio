@@ -1,8 +1,8 @@
 ---
 
-import Testing from "../Testing.astro";
-import { getLangFromUrl } from '../../i18n/utils';
-import LanguagePicker from "../LanguagePicker.astro";
+import Testing from "@/components/Testing.astro";
+import LanguagePicker from "@/components/LanguagePicker.astro";
+import { getLangFromUrl } from '@/i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 
@@ -35,6 +35,7 @@ const links = [
   <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
     <div class="flex">
       <a 
+      x-on:click='setTimeout(() => window.location.reload(), 500)'
       href={`/${lang}`}
       rel="noopener noreferrer"
       class="select-none rounded-md p-4 focus-visible:ring-2 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
@@ -43,7 +44,7 @@ const links = [
         <img 
           @click= "open = false"
           :class="{ 'invert': ($store.theme.isDark) }"
-          class="h-8 w-auto"
+          class="h-8 w-auto -rotate-12 hover:rotate-0 transition-transform"
           width="85" 
           height="35" 
           src="/assets/logo.svg"
@@ -162,7 +163,7 @@ const links = [
         {
           links.map((link) => (
             <a
-              x-on:click='open = false; setTimeout(() => window.location.reload(), 500)'
+              x-on:click='open = false'
               href={link.target}
               class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition sm:py-8 sm:text-4xl
               focus-visible:outline-none
