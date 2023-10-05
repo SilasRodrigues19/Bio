@@ -1,15 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
+let colors = require('tailwindcss/colors');
+
+delete colors['lightBlue'];
+delete colors['warmGray'];
+delete colors['trueGray'];
+delete colors['coolGray'];
+delete colors['blueGray'];
+
+colors = { ...colors, ...{ transparent: 'transparent' } };
 
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     colors: {
-      current: 'currentColor',
-      transparent: 'transparent',
+      ...colors,
       primary: colors.slate,
     },
     fontFamily: {
