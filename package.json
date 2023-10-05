@@ -16,6 +16,7 @@
     "@types/alpinejs": "^3.13.2",
     "alpinejs": "^3.7.2",
     "astro": "^3.1.4",
+    "astro-compress": "^2.0.15",
     "astro-link-preview": "^0.3.4",
     "tailwindcss": "^3.0.24",
     "typed.js": "^2.0.16"
