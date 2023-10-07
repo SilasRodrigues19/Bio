@@ -48,10 +48,10 @@
 
 ## About The Project
 
-| Light Desktop                                  | Dark Desktop                                    |
-| ---------------------------------------------- | ----------------------------------------------- |
-| [![Preview][product-screenshot]][project-link] | [![Preview][product-screenshot2]][project-link] |
-| Light Mobile                                   | Dark Mobile                                     |
+| Light Desktop                                   | Dark Desktop                                    |
+| ----------------------------------------------- | ----------------------------------------------- |
+| [![Preview][product-screenshot]][project-link]  | [![Preview][product-screenshot2]][project-link] |
+| Light Mobile                                    | Dark Mobile                                     |
 | [![Preview][product-screenshot3]][project-link] | [![Preview][product-screenshot4]][project-link] |
 
 <hr>
@@ -63,36 +63,41 @@ Slightly more simplified version of my [portfolio](https://github.com/SilasRodri
 Technologies used in the project.
 
 ### Libraries
+
 - [typed.js](https://github.com/mattboldt/typed.js)
-A JavaScript Typing Animation Library
+  A JavaScript Typing Animation Library
 
 - [Iconify](https://icon-sets.iconify.design/)
-All popular icon sets, one framework. Over 150,000 open source vector icons.
-### Frameworks
-- [Astro](https://astro.build/)
-Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.
+  All popular icon sets, one framework. Over 150,000 open source vector icons.
 
+### Frameworks
+
+- [Astro](https://astro.build/)
+  Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.
 
 - [Alpinejs](https://alpinejs.dev/)
-Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. Plop in a script tag and get going.
+  Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. Plop in a script tag and get going.
 
 - [@astrojs/tailwind](https://tailwindcss.com)
-Framework for fast and efficient front-end styling.
+  Framework for fast and efficient front-end styling.
 
 ### Plugins
+
 - [@alpine/collapse](https://alpinejs.dev/plugins/collapse)
-Alpine's Collapse plugin allows you to expand and collapse elements using smooth animations.
+  Alpine's Collapse plugin allows you to expand and collapse elements using smooth animations.
 
 ### Technologies
+
 - [TypeScript](https://www.typescriptlang.org/)
-A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+  A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
 ### Tools (Official and unofficial integrations for Astro)
+
 - [astro-compress](https://github.com/astro-community/AstroCompress)
-AstroJS compression utilities. Compress CSS, HTML, JavaScript and more!
+  AstroJS compression utilities. Compress CSS, HTML, JavaScript and more!
 
 - [astro-link-preview](https://github.com/cijiugechu/astro-link-preview)
-This Astro integration generates preview images for external links.
+  This Astro integration generates preview images for external links.
 
 <!-- GETTING STARTED -->
 
@@ -120,7 +125,7 @@ This Astro integration generates preview images for external links.
      Port: 4321
      Access URL: http://10.0.0.38:4321
    ```
-<!-- CONTRIBUTING -->
+   <!-- CONTRIBUTING -->
 
 ## Contributing
 
