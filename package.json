@@ -6,7 +6,7 @@
     "dev": "astro dev --host --open",
     "start": "astro dev --host --open",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host --open",
     "astro": "astro"
   },
   "dependencies": {
