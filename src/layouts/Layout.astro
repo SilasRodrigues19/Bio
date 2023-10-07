@@ -24,14 +24,23 @@ import  '../styles/style.css';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="author" content="Silas Rodrigues" />
+		<meta name="keywords"
+        content="Silas Rodrigues, freelancer, programador, desenvolvedor, portfolio, frontend, autodidata" />
 		<meta name="description" content={description} />
+		<meta name="language" content="pt" />
     <meta name="generator" content={Astro.generator} />
+		<meta name="robots" content="index, follow" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml">
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="alternate" hreflang="pt" href="https://bio-silas.vercel.app/pt" />
+		<link rel="alternate" hreflang="en" href="https://bio-silas.vercel.app/en" />
+
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" as="style" onload="
+		this.onload = null; this.rel = 'stylesheet'" />
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 		<title>{title}</title>
 
@@ -39,14 +48,14 @@ import  '../styles/style.css';
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<!-- <meta name="twitter:image" content="URL_DA_IMAGEM" /> -->
+		<meta name="twitter:image" content="/public/screenshots/preview.png" /> 
 
 		<!-- LinkedIn Meta Tags -->
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content="https://bio-silas.vercel.app/" />
-		<!-- <meta property="og:image" content="URL_DA_IMAGEM" /> -->
+		<meta property="og:image" content="/public/screenshots/preview.png" /> 
 
 	</head>
 	<body class="relative bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans
