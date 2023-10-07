@@ -85,10 +85,10 @@ const supportLinks = [
     	</div>
 
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
-				{links.map((link) => (
+				{links.map(({ url, dataIcon, name }) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
-							<span class="iconify" data-icon={link.dataIcon} aria-label={link.name}></span> {link.name}
+						<a target="_blank" href={url} aria-label={name} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={dataIcon}></span> {name}
 						</a>
 					</li>
 				))}
@@ -101,10 +101,10 @@ const supportLinks = [
 			</p>
 
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
-				{codeLinks.map((link) => (
+				{codeLinks.map(({ url, dataIcon, name }) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
-							<span class="iconify" data-icon={link.dataIcon} aria-label={link.name}></span> {link.name}
+						<a target="_blank" href={url} aria-label={name} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={dataIcon}></span> {name}
 						</a>
 					</li>
 				))}
@@ -117,10 +117,10 @@ const supportLinks = [
 			</p>
 
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
-				{socialLinks.map((link) => (
+				{socialLinks.map(({ url, dataIcon, name }) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
-							<span class="iconify" data-icon={link.dataIcon} aria-label={link.name}></span> {link.name}
+						<a target="_blank" href={url} aria-label={name} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-evenly rounded-md">
+							<span class="iconify" data-icon={dataIcon}></span> {name}
 						</a>
 					</li>
 				))}
@@ -133,10 +133,10 @@ const supportLinks = [
 			</p>
 
 			<ul class="grid sm:grid-cols-3 grid-cols-2 max-w-md gap-4">
-				{supportLinks.map((link) => (
+				{supportLinks.map(({ url, dataIcon, name }) => (
 					<li class="flex flex-col gap-2">
-						<a target="_blank" href={link.url} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-center gap-4 rounded-md">
-							<span class="iconify" data-icon={link.dataIcon} aria-label={link.name}></span> {link.name}
+						<a target="_blank" href={url} aria-label={name} class="text-primary-950/70 dark:text-primary-200/70 outline-1 py-2 outline-dashed outline-primary-200 dark:outline-primary-800 hover:bg-primary-950/10 dark:hover:bg-primary-100/10 flex items-center justify-center gap-4 rounded-md">
+							<span class="iconify" data-icon={dataIcon}></span> {name}
 						</a>
 					</li>
 				))}

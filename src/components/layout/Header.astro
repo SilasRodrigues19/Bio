@@ -48,7 +48,7 @@ const links = [
           width="85" 
           height="35" 
           src="/assets/logo.svg"
-          alt="Silas Rodrigues"
+          alt="Website logo"
           loading="lazy"
           decoding="async"
         />
@@ -161,18 +161,27 @@ const links = [
 
       <nav class="divide-primary-900/10 dark:divide-primary-300/10 flex flex-col gap-1 divide-y">
         {
-          links.map((link) => (
+          links.map(({ number, name, target }) => (
             <a
               x-on:click='open = false'
-              href={link.target}
+              href={target}
               class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition sm:py-8 sm:text-4xl
-              focus-visible:outline-none
-              "
+              focus-visible:outline-none"
             >
               <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">
                 <div class="flex items-center gap-6">
-                  <span class="text-xs text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 group-hover:scale-150 transition-transform">{link.number}</span>
-                  <span class="p-4 text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal">{link.name}</span>
+                  <span class="text-xs text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 group-hover:scale-150 transition-transform">{number}</span>
+                  <span 
+                    data-after={name}
+                    class="p-4 text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal
+                    after:content-[attr(data-after)] after:absolute after:left-1/2 after:top-1/2 after:mt-12 after:text-5xl after:z-10 
+                    after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:w-max
+                    after:opacity-5 after:uppercase after:leading-8 after:tracking-tight after:font-medium
+                    group-hover:after:scale-100 group-hover:after:-translate-x-1/2 
+                    group-hover:after:-translate-y-1/2 group-hover:scale-100"
+                    >
+                      {name}
+                    </span>
                 </div>
                 <svg 
                   class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 h-6 w-6 sm:h-8 sm:w-8 group-hover:-translate-x-2 transition-transform"
