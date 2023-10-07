@@ -172,4 +172,4 @@ Project Link: [https://github.com/SilasRodrigues19/Bio](https://github.com/Silas
 [project-link]: https://bio-silas.vercel.app/
 
 <br><hr>
-[🔼 Back to top](#bio)
+[🔼 Back to top](#bio---silas-rodrigues)
