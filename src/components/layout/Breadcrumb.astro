@@ -15,6 +15,13 @@ const lastDynamicSegment = segments.pop();
 
 const { currentPath = lastDynamicSegment! } = Astro.props;
 
+const translations = {
+  'en': 'English',
+  'pt': 'Portuguese'
+};
+
+const translatedPath = translations[currentPath as keyof typeof translations] || currentPath;
+
 ---
 
 <section class="relative pt-36">
@@ -39,7 +46,7 @@ const { currentPath = lastDynamicSegment! } = Astro.props;
         <span class='text-primary-700 dark:text-primary-300 capitalize select-none'>
           {
             ['social', 'about', 'contact', 'en', 'pt'].includes(currentPath) ? 
-            currentPath : '404'
+            translatedPath  : '404'
           }
           <span class="sr-only">Current page</span>
         </span>
