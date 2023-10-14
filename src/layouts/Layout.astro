@@ -13,6 +13,7 @@ const { title, description } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 import  '../styles/style.css';
+import Footer from '@/components/layout/Footer.astro';
 
 ---
 
@@ -63,12 +64,13 @@ import  '../styles/style.css';
 	>
 		
 		<Header />
-		<main class="swup transition-main">
-			<Breadcrumb />
+			<main class="swup transition-main">
+				<Breadcrumb />
 
-			<slot />
-		</main>
-		<div class="overlay transition-overlay"></div>
+				<slot />
+			</main>
+			<div class="overlay transition-overlay"></div>
+		<Footer />
 
 		<style is:global>
 
