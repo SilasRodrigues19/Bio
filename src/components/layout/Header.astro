@@ -2,24 +2,26 @@
 
 import Testing from "@/components/Testing.astro";
 import LanguagePicker from "@/components/LanguagePicker.astro";
-import { getLangFromUrl } from '@/i18n/utils';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 
 const links = [
   {
     number: '01',
-    name: 'About',
+    name: t('header.about'),
     target: `/${lang}/about/`
   },
   {
     number: '02',
-    name: 'Social',
+    name: t('header.social'),
     target: `/${lang}/social/`
   },
   {
     number: '03',
-    name: 'Contact',
+    name: t('header.contact'),
     target: `/${lang}/contact/`
   }
 ]
