@@ -146,9 +146,12 @@ const links = [
     id="website-menu"
     x-cloak
     x-show="open"
-    x-collapse
-    x-collapse.duration.800ms
-    x-transition.delay.50ms
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 scale-50"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 scale-50"
+    x-transition:leave-end="opacity-0 scale-50"
   >
     <div class="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
       <div
