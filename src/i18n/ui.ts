@@ -11,6 +11,7 @@ export const ui = {
     'breadcrumb.social': 'Social',
     'breadcrumb.about': 'About',
     'breadcrumb.contact': 'Contact',
+    'breadcrumb.privacy': 'Privacy',
     'breadcrumb.en': 'English',
     'breadcrumb.pt': 'Portuguese',
 
@@ -58,6 +59,7 @@ export const ui = {
     'breadcrumb.social': 'Social',
     'breadcrumb.about': 'Sobre',
     'breadcrumb.contact': 'Contato',
+    'breadcrumb.privacy': 'Privacidade',
     'breadcrumb.en': 'Inglês',
     'breadcrumb.pt': 'Português',
 

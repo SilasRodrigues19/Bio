@@ -20,6 +20,7 @@ const translations = {
   'social': t('breadcrumb.social'),
   'about': t('breadcrumb.about'),
   'contact': t('breadcrumb.contact'),
+  'privacy': t('breadcrumb.privacy'),
   'en': t('breadcrumb.en'),
   'pt': t('breadcrumb.pt'),
 }
@@ -49,7 +50,7 @@ const translatedPath = translations[currentPath as keyof typeof translations] ||
         )}
         <span class='text-primary-700 dark:text-primary-300 capitalize select-none'>
           {
-            ['social', 'about', 'contact', 'en', 'pt'].includes(currentPath) ? 
+            ['social', 'about', 'contact', 'privacy', 'en', 'pt'].includes(currentPath) ? 
             translatedPath  : '404'
           }
           <span class="sr-only">Current page</span>
