@@ -15,10 +15,14 @@ const lastDynamicSegment = segments.pop();
 
 const { currentPath = lastDynamicSegment! } = Astro.props;
 
+
 const translations = {
-  'en': 'English',
-  'pt': 'Portuguese'
-};
+  'social': t('breadcrumb.social'),
+  'about': t('breadcrumb.about'),
+  'contact': t('breadcrumb.contact'),
+  'en': t('breadcrumb.en'),
+  'pt': t('breadcrumb.pt'),
+}
 
 const translatedPath = translations[currentPath as keyof typeof translations] || currentPath;
 
@@ -31,9 +35,9 @@ const translatedPath = translations[currentPath as keyof typeof translations] ||
         <li class='inline-flex items-center'>
           <a href={`/${lang}`} 
              class='text-primary-500 hover:text-primary-600 rounded-sm
-             ocus-visible:outline focus-visible:outline-offset-8 focus-visible:dark:outline-primary-500 focus-visible:outline-primary-600'
+             focus-visible:outline focus-visible:outline-offset-8 focus-visible:dark:outline-primary-500 focus-visible:outline-primary-600'
           >
-            Home
+            {t('breadcrumb.home')}
           </a>
         </li>
       )}

@@ -7,6 +7,13 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
+    'breadcrumb.home': 'Home',
+    'breadcrumb.social': 'Social',
+    'breadcrumb.about': 'About',
+    'breadcrumb.contact': 'Contact',
+    'breadcrumb.en': 'English',
+    'breadcrumb.pt': 'Portuguese',
+
     '404.title': 'Not found | Bio - Silas Rodrigues',
     '404.description':
       'Page not found. Please, check the URL in the address bar and try again',
@@ -18,7 +25,8 @@ export const ui = {
     'header.social': 'Social',
     'header.contact': 'Contact',
 
-    'footer.description': 'Bio - Silas Rodrigues. About my career and projects, social networks and contact information.',
+    'footer.description':
+      'Bio - Silas Rodrigues. Career, projects and how to find me online.',
     'footer.nav': 'Navigation',
     'footer.nav.home': 'Home',
     'footer.nav.about': 'About',
@@ -28,6 +36,13 @@ export const ui = {
     'footer.terms': 'Terms and Privacy',
   },
   pt: {
+    'breadcrumb.home': 'Início',
+    'breadcrumb.social': 'Social',
+    'breadcrumb.about': 'Sobre',
+    'breadcrumb.contact': 'Contato',
+    'breadcrumb.en': 'Inglês',
+    'breadcrumb.pt': 'Português',
+
     '404.title': 'Não encontrado | Bio - Silas Rodrigues',
     '404.description':
       'Página não encontrada. Por favor, verifique a URL na barra de endereços e tente novamente',
@@ -40,7 +55,8 @@ export const ui = {
     'header.social': 'Social',
     'header.contact': 'Contato',
 
-    'footer.description': 'Bio - Silas Rodrigues. Sobre minha carreira e projetos, redes sociais e informações de contato.',
+    'footer.description':
+      'Bio - Silas Rodrigues. Carreira, projetos e maneiras de me encontrar online.',
     'footer.nav': 'Navegação',
     'footer.nav.home': 'Início',
     'footer.nav.about': 'Sobre',
