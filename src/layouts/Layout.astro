@@ -1,114 +1,129 @@
 ---
-
-import Breadcrumb from '@/components/layout/Breadcrumb.astro';
-import Header from '@/components/layout/Header.astro';
-import { getLangFromUrl } from '@/i18n/utils';
+import Breadcrumb from "@/components/layout/Breadcrumb.astro";
+import Header from "@/components/layout/Header.astro";
+import { getLangFromUrl } from "@/i18n/utils";
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-import  '../styles/style.css';
-import Footer from '@/components/layout/Footer.astro';
-
+import "../styles/style.css";
+import Footer from "@/components/layout/Footer.astro";
 ---
 
 <!doctype html>
 <html lang={lang} x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
-	<head>
-		<!-- Preconnect -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-		<meta name="author" content="Silas Rodrigues" />
-		<meta name="keywords"
-        content="Silas Rodrigues, freelancer, programador, desenvolvedor, portfolio, frontend, autodidata" />
-		<meta name="description" content={description} />
-		<meta name="language" content="pt" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="author" content="Silas Rodrigues" />
+    <meta
+      name="keywords"
+      content="Silas Rodrigues, freelancer, programador, desenvolvedor, portfolio, frontend, autodidata"
+    />
+    <meta name="description" content={description} />
+    <meta name="language" content="pt" />
     <meta name="generator" content={Astro.generator} />
-		<meta name="robots" content="index, follow" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-		<link rel="alternate" hreflang="pt" href="https://bio-silas.vercel.app/pt" />
-		<link rel="alternate" hreflang="en" href="https://bio-silas.vercel.app/en" />
+    <link
+      rel="alternate"
+      hreflang="pt"
+      href="https://bio-silas.vercel.app/pt"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://bio-silas.vercel.app/en"
+    />
 
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" as="style" onload="
-		this.onload = null; this.rel = 'stylesheet'" />
-    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="
+		this.onload = null; this.rel = 'stylesheet'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-		<title>{title}</title>
+    <title>{title}</title>
 
     <!-- Twitter Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/public/screenshots/preview.png" /> 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/public/screenshots/preview.png" />
 
-		<!-- LinkedIn Meta Tags -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:url" content="https://bio-silas.vercel.app/" />
-		<meta property="og:image" content="/public/screenshots/preview.png" /> 
+    <!-- LinkedIn Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://bio-silas.vercel.app/" />
+    <meta property="og:image" content="/public/screenshots/preview.png" />
+  </head>
+  <body
+    class="relative bg-primary-50 font-sans text-primary-950 antialiased transition scrollbar scrollbar-track-transparent
+	scrollbar-thumb-primary-400 selection:bg-primary-700 selection:text-primary-200 hover:scrollbar-thumb-primary-500
+	dark:bg-primary-950 dark:text-primary-200 dark:selection:bg-primary-300 dark:selection:text-primary-700"
+  >
+    <Header />
+    <Breadcrumb />
+    <main class="swup transition-main">
+      <slot />
+    </main>
+    <div class="overlay transition-overlay"></div>
+    <Footer />
 
-	</head>
-	<body class="relative bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition font-sans
-	selection:bg-primary-700 selection:text-primary-200 dark:selection:bg-primary-300 dark:selection:text-primary-700
-	scrollbar scrollbar-thumb-primary-400 hover:scrollbar-thumb-primary-500 scrollbar-track-transparent"
-	>
-		
-		<Header />
-			<Breadcrumb />
-			<main class="swup transition-main">
-				<slot />
-			</main>
-			<div class="overlay transition-overlay"></div>
-		<Footer />
-
-		<style is:global>
-
-			[x-cloak], [x-hidden] {
+    <style is:global>
+      [x-cloak],
+      [x-hidden] {
         display: none;
       }
+    </style>
 
-		</style>
-		
-		<script async src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script async src="https://code.iconify.design/3/3.1.0/iconify.min.js"
+    ></script>
 
-		<script>
-      import Alpine from 'alpinejs';
-      import collapse from '@alpinejs/collapse';
+    <script>
+      import Alpine from "alpinejs";
+      import collapse from "@alpinejs/collapse";
 
       Alpine.plugin(collapse);
 
-      Alpine.store('theme', {
+      Alpine.store("theme", {
         init() {
-          this.isDark = typeof localStorage !== 'undefined' && localStorage.getItem('theme')
-            ? localStorage.getItem('theme') === 'dark'
-            : window.matchMedia('(prefers-color-scheme: dark)').matches;
-
+          this.isDark =
+            typeof localStorage !== "undefined" && localStorage.getItem("theme")
+              ? localStorage.getItem("theme") === "dark"
+              : window.matchMedia("(prefers-color-scheme: dark)").matches;
         },
 
         isDark: false,
 
         toggle() {
           this.isDark = !this.isDark;
-          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+          localStorage.setItem("theme", this.isDark ? "dark" : "light");
         },
       });
 
       window.Alpine = Alpine;
       Alpine.start();
-
     </script>
-	</body>
-	</html>
-
-	
+  </body>
+</html>

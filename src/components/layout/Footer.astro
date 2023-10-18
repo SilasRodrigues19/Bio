@@ -1,5 +1,4 @@
 ---
-
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -7,104 +6,103 @@ const t = useTranslations(lang);
 
 const bottomLinks = [
   {
-    header: 'Social',
+    header: "Social",
     links: [
       {
-        name: 'Github',
-        href: 'https://github.com/SilasRodrigues19/Bio',
+        name: "Github",
+        href: "https://github.com/SilasRodrigues19/Bio",
         isExternal: true,
       },
       {
-        name: 'Twitter',
-        href: 'https://twitter.com/jinuye1',
+        name: "Twitter",
+        href: "https://twitter.com/jinuye1",
         isExternal: true,
       },
       {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/silasrodrigues19/',
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/silasrodrigues19/",
         isExternal: true,
       },
     ],
   },
   {
-    header: t('footer.nav'),
+    header: t("footer.nav"),
     links: [
       {
-        name: t('footer.nav.home'),
+        name: t("footer.nav.home"),
         href: `/${lang}/`,
         isExternal: false,
       },
       {
-        name: t('footer.nav.about'),
+        name: t("footer.nav.about"),
         href: `/${lang}/about/`,
         isExternal: false,
       },
       {
-        name: t('footer.nav.social'),
+        name: t("footer.nav.social"),
         href: `/${lang}/social/`,
         isExternal: false,
       },
       {
-        name: t('footer.nav.contact'),
+        name: t("footer.nav.contact"),
         href: `/${lang}/contact/`,
         isExternal: false,
       },
     ],
   },
   {
-    header: t('footer.terms'),
+    header: t("footer.terms"),
     links: [
       {
-        name: 'Privacy',
+        name: "Privacy",
         href: `/${lang}/privacy/`,
         isExternal: false,
       },
     ],
   },
 ];
-
 ---
 
 <footer
-  class='bg-primary-500/10 dark:bg-primary-400/10 mt-16 py-16 lg:mt-20 lg:py-20'
-  aria-labelledby='footer-heading'
+  class="mt-16 bg-primary-500/10 py-16 dark:bg-primary-400/10 lg:mt-20 lg:py-20"
+  aria-labelledby="footer-heading"
 >
-  <h2 id='footer-heading' class='sr-only'>Footer</h2>
-  <div class='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
-    <div class='flex flex-col justify-between gap-12 sm:gap-16 lg:flex-row'>
-      <div class='flex max-w-sm flex-col items-start gap-6 sm:gap-8'>
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col justify-between gap-12 sm:gap-16 lg:flex-row">
+      <div class="flex max-w-sm flex-col items-start gap-6 sm:gap-8">
         <img
           :class="{ 'invert': ($store.theme.isDark) }"
           class="h-8 w-auto"
-          width="85" 
-          height="35" 
+          width="85"
+          height="35"
           src="/assets/logo.svg"
           alt="Website logo"
           loading="lazy"
           decoding="async"
         />
-        <p class='text-primary-950/70 dark:text-primary-200/70 text-base'>
-          {t('footer.description')}
+        <p class="text-base text-primary-950/70 dark:text-primary-200/70">
+          {t("footer.description")}
         </p>
-        <p class='text-primary-950/70 dark:text-primary-200/70 text-sm'>
-          {new Date().getFullYear()} &copy; {t('footer.copy')}
+        <p class="text-sm text-primary-950/70 dark:text-primary-200/70">
+          {new Date().getFullYear()} &copy; {t("footer.copy")}
         </p>
       </div>
 
       <!-- Bottom links -->
-      <div class='grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-3'>
+      <div class="grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-3">
         {
           bottomLinks.map((group) => (
-            <div class='flex flex-col gap-4'>
-              <p class='text-base font-medium'>{group.header}</p>
-              <ul role='list' class='flex flex-col gap-3'>
+            <div class="flex flex-col gap-4">
+              <p class="text-base font-medium">{group.header}</p>
+              <ul role="list" class="flex flex-col gap-3">
                 {group.links.map((link) => (
                   <li>
                     <a
                       href={link.href}
-                      class='focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2'
-                      target={link.isExternal ? '_blank' : undefined}
-                      rel={link.isExternal ? 'noopener noreferrer' : undefined}
+                      class="inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200"
+                      target={link.isExternal ? "_blank" : undefined}
+                      rel={link.isExternal ? "noopener noreferrer" : undefined}
                     >
                       {link.name}
                     </a>

@@ -1,33 +1,34 @@
 ---
-
 interface Props {
   prefix?: string;
   code?: string;
 }
 
-const { prefix, code } = Astro.props
-
+const { prefix, code } = Astro.props;
 ---
 
 <div
-  class="hover:scale-[.96] transition-transform select-none relative max-w-sm border border-primary-500/100 dark:border dark:border-primary-500/30 py-5 text-primary-800 dark:text-primary-200 rounded-lg
-  before:content-[''] before:mb-4 before:block before:h-3 before:w-3 before:rounded-full before:opacity-30 
-  before:shadow-[1.4em_0,_2.8em_0,_4.2em_0]"
+  class="relative max-w-sm select-none rounded-lg border border-primary-500/100 py-5 text-primary-800 transition-transform before:mb-4 before:block before:h-3 before:w-3
+  before:rounded-full before:opacity-30 before:shadow-[1.4em_0,_2.8em_0,_4.2em_0] before:content-[''] hover:scale-[.96] dark:border dark:border-primary-500/30
+  dark:text-primary-200"
 >
   <pre
     data-prefix={prefix}
-    class='h-8 before:content-[attr(data-prefix)] before:inline-block
-    before:text-right before:w-8 before:h-8
-    before:opacity-50'
-  >
+    class="h-8 before:inline-block before:h-8
+    before:w-8 before:text-right before:opacity-50
+    before:content-[attr(data-prefix)]">
     <code id="element" class="xs:text-xs sm:text-sm text-primary-600 dark:text-primary-400 select-none">{code}</code>
   </pre>
 </div>
 
 <script>
   import Typed from "typed.js";
-  let typed = new Typed('#element', {
-    strings: ['pnpm create astro@latest', 'pnpm astro add tailwind', 'pnpm run dev'],
+  let typed = new Typed("#element", {
+    strings: [
+      "pnpm create astro@latest",
+      "pnpm astro add tailwind",
+      "pnpm run dev",
+    ],
     typeSpeed: 100,
     backSpeed: 10,
     loop: true,

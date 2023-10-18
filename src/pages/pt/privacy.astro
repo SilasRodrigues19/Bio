@@ -1,57 +1,60 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <Layout
-  description={t('privacy.layout.description')}
-  title={t('privacy.layout.title')}
+  description={t("privacy.layout.description")}
+  title={t("privacy.layout.title")}
 >
-  <div class='mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8'>
-    <div class='sm:pb:20 mt-12 flex flex-col gap-4 pb-16 text-center'>
-      <h1 class='text-4xl font-medium tracking-tight sm:text-5xl'>
-        {t('privacy.title')}
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <div class="sm:pb:20 mt-12 flex flex-col gap-4 pb-16 text-center">
+      <h1 class="text-4xl font-medium tracking-tight sm:text-5xl">
+        {t("privacy.title")}
       </h1>
-      <p class='text-base'>{t('privacy.update')}</p>
+      <p class="text-base">{t("privacy.update")}</p>
     </div>
     <div>
-      <p class='mb-4'>
-        {t('privacy.intro')}
+      <p class="mb-4">
+        {t("privacy.intro")}
       </p>
-      <h2 class='mb-6 mt-12 text-xl font-medium sm:text-2xl'>
-        {t('privacy.item1.title')}
+      <h2 class="mb-6 mt-12 text-xl font-medium sm:text-2xl">
+        {t("privacy.item1.title")}
       </h2>
-      <p class='mb-6'>
-        {t('privacy.item1.subtitle')}
+      <p class="mb-6">
+        {t("privacy.item1.subtitle")}
       </p>
-      <ul class='list-inside list-disc space-y-4'>
+      <ul class="list-inside list-disc space-y-4">
         <li>
-          {t('privacy.item1.content')}
+          {t("privacy.item1.content")}
         </li>
       </ul>
-      <h2 class='mb-6 mt-12 text-xl font-medium sm:text-2xl'>
-        {t('privacy.item2.title')}
+      <h2 class="mb-6 mt-12 text-xl font-medium sm:text-2xl">
+        {t("privacy.item2.title")}
       </h2>
-      <p class='mb-4'>
-        {t('privacy.item2.subtitle')}
+      <p class="mb-4">
+        {t("privacy.item2.subtitle")}
       </p>
-      <ul class='list-inside list-disc space-y-4'>
+      <ul class="list-inside list-disc space-y-4">
         <li>
-          {t('privacy.item2.text')}
+          {t("privacy.item2.text")}
         </li>
       </ul>
-      <h2 class='mb-6 mt-12 text-xl font-medium sm:text-2xl'>
-        {t('privacy.contact.title')}
+      <h2 class="mb-6 mt-12 text-xl font-medium sm:text-2xl">
+        {t("privacy.contact.title")}
       </h2>
-      <p class='mb-4'>
-        {t('privacy.contact.text')}
+      <p class="mb-4">
+        {t("privacy.contact.text")}
       </p>
-      <a class="dark:hover:text-primary-400 hover:text-primary-500" href="mailto:silasrodrigues.fatec@gmail.com">silasrodrigues.fatec@gmail.com</a>
+      <a
+        class="hover:text-primary-500 dark:hover:text-primary-400"
+        href="mailto:silasrodrigues.fatec@gmail.com"
+        >silasrodrigues.fatec@gmail.com</a
+      >
     </div>
   </div>
 </Layout>
