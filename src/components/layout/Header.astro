@@ -157,54 +157,54 @@ const links = [
           <span class="iconify h-36 w-36" data-icon="solar:code-2-linear"
           ></span>
         </p>
+      </div>
 
-        <nav
-          class="flex flex-col gap-1 divide-y divide-primary-900/10 dark:divide-primary-300/10"
-        >
-          {
-            links.map(({ number, name, target }) => (
-              <a
-                x-on:click="open = false"
-                href={target}
-                class="group inline-flex py-6 text-3xl font-medium tracking-tight text-primary-700 transition focus-visible:outline-none dark:text-primary-400 sm:py-8
+      <nav
+        class="flex flex-col gap-1 divide-y divide-primary-900/10 dark:divide-primary-300/10"
+      >
+        {
+          links.map(({ number, name, target }) => (
+            <a
+              x-on:click="open = false"
+              href={target}
+              class="group inline-flex py-6 text-3xl font-medium tracking-tight text-primary-700 transition focus-visible:outline-none dark:text-primary-400 sm:py-8
               sm:text-4xl"
-              >
-                <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">
-                  <div class="flex items-center gap-6">
-                    <span class="text-xs text-primary-700 transition-transform group-hover:scale-150 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200">
-                      {number}
-                    </span>
-                    <span
-                      data-after={name}
-                      class="p-4 font-normal text-primary-700 after:absolute after:left-1/2 after:top-1/2
+            >
+              <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">
+                <div class="flex items-center gap-6">
+                  <span class="text-xs text-primary-700 transition-transform group-hover:scale-150 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200">
+                    {number}
+                  </span>
+                  <span
+                    data-after={name}
+                    class="p-4 font-normal text-primary-700 after:absolute after:left-1/2 after:top-1/2
                     after:z-10 after:mt-12 after:w-max after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:text-5xl 
                     after:font-medium after:uppercase after:leading-8 after:tracking-tight
                     after:opacity-5 after:content-[attr(data-after)] group-hover:scale-100 group-hover:text-primary-950 group-hover:after:-translate-x-1/2
                     group-hover:after:-translate-y-1/2 group-hover:after:scale-100 
                     dark:text-primary-400 group-hover:dark:text-primary-200"
-                    >
-                      {name}
-                    </span>
-                  </div>
-                  <svg
-                    class="h-6 w-6 text-primary-700 transition-transform group-hover:-translate-x-2 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200 sm:h-8 sm:w-8"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
                   >
-                    <path
-                      fill="currentColor"
-                      d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"
-                    />
-                  </svg>
+                    {name}
+                  </span>
                 </div>
-              </a>
-            ))
-          }
-        </nav>
-      </div>
+                <svg
+                  class="h-6 w-6 text-primary-700 transition-transform group-hover:-translate-x-2 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200 sm:h-8 sm:w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"
+                  />
+                </svg>
+              </div>
+            </a>
+          ))
+        }
+      </nav>
     </div>
   </div>
 </header>
