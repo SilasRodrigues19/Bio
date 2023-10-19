@@ -1,9 +1,11 @@
 :root {
   --overlay-background: #0f172a;
+  --line-color: hsl(0 0% 5% / 0.10)
 }
 
 .dark {
   --overlay-background: #cbd5e1;
+  --line-color: hsl(0 0% 95% / 0.10)
 }
 
 .is-changing .transition-main {
@@ -47,4 +49,18 @@
 
 .to-back {
   /* --overlay-direction: -1; */
+}
+
+body::before {
+  --line: var(--line-color);
+    content: "";
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin, linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+    -webkit-mask: linear-gradient(-20deg, transparent 30%, white);
+    mask: linear-gradient(-20deg, transparent 30%, white);
+    top: 2rem;
+    z-index: -1;
 }
