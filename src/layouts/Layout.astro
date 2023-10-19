@@ -1,7 +1,10 @@
 ---
 import Breadcrumb from "@/components/layout/Breadcrumb.astro";
 import Header from "@/components/layout/Header.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import Footer from "@/components/layout/Footer.astro";
+import "../styles/style.css";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
   title: string;
@@ -11,8 +14,7 @@ interface Props {
 const { title, description } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
-import "../styles/style.css";
-import Footer from "@/components/layout/Footer.astro";
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -88,6 +90,31 @@ import Footer from "@/components/layout/Footer.astro";
       <slot />
     </main>
     <div class="overlay transition-overlay"></div>
+
+    <div
+      class="fixed bottom-16 xs:right-8 sm:right-36"
+      x-data="{scrollBackTop: false}"
+      x-cloak
+    >
+      <a
+        x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.2) ? true : false"
+        x-on:click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      >
+        <span class="sr-only">
+          {t("layout.scroll")}
+        </span>
+
+        <span
+          class="iconify z-10 cursor-pointer transition-all hover:translate-y-4 hover:animate-bounce"
+          :class="{ 'opacity-100 translate-y-26': scrollBackTop, 'opacity-0 translate-y-16': !scrollBackTop }"
+          data-icon="jam:chevrons-up"
+          data-width="30"
+          data-height="30"
+        >
+        </span>
+      </a>
+    </div>
+
     <Footer />
 
     <style is:global>

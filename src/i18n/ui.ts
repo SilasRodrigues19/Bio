@@ -7,6 +7,8 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
+    'layout.scroll': 'Scroll to top',
+
     'breadcrumb.home': 'Home',
     'breadcrumb.social': 'Social',
     'breadcrumb.about': 'About',
@@ -55,6 +57,8 @@ export const ui = {
     'footer.terms': 'Terms and Privacy',
   },
   pt: {
+    'layout.scroll': 'Rolar para o topo',
+
     'breadcrumb.home': 'Início',
     'breadcrumb.social': 'Social',
     'breadcrumb.about': 'Sobre',
