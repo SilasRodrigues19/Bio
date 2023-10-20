@@ -64,3 +64,15 @@ body::before {
     top: 2rem;
     z-index: -1;
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--line-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-color);
+}
