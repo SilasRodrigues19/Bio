@@ -30,7 +30,11 @@ const links = [
   x-data="{ open: false }"
   class="fixed z-10 w-full shadow-sm transition"
   :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
+  aria-labelledby="header-navigation"
 >
+  <h2 id="header-navigation" class="sr-only">
+    {t("sr-only-header")}
+  </h2>
   <div
     class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8"
   >
@@ -68,7 +72,9 @@ const links = [
         x-data
         @click="$store.theme.toggle()"
       >
-        <span class="sr-only">Toggle theme</span>
+        <span class="sr-only">
+          {t("sr-only-theme")}
+        </span>
         <svg
           width="30"
           height="30"
@@ -99,7 +105,9 @@ const links = [
         aria-expanded="false"
         :aria-expanded="open.toString()"
       >
-        <span class="sr-only">Toggle menu</span>
+        <span class="sr-only">
+          {t("sr-only-menu")}
+        </span>
 
         <svg
           x-cloak
@@ -151,12 +159,23 @@ const links = [
       <div
         class="hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex"
       >
-        <p
-          class="max-w-sm text-xl italic leading-loose text-primary-950/70 dark:text-primary-200/70"
+        <div
+          x-data="{dataIcons: ['iconoir:scan-qr-code', 'lucide:code-2', 'solar:code-2-linear'][Math.floor(Math.random() * 3)]}"
         >
-          <span class="iconify h-36 w-36" data-icon="solar:code-2-linear"
-          ></span>
-        </p>
+          <!-- 
+
+              const icons = ["iconoir:scan-qr-code", "lucide:code-2", "solar:code-2-linear"];
+
+              <div
+                x-data="{dataIcons: [...icons][Math.floor(Math.random() * icons.length)]}" 
+              >
+          -->
+          <span
+            x-bind:data-icon="dataIcons"
+            class="iconify h-44 w-44 text-primary-950/70 hover:animate-pulse dark:text-primary-200/70"
+          >
+          </span>
+        </div>
       </div>
 
       <nav

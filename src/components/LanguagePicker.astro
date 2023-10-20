@@ -1,7 +1,8 @@
 ---
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const currentLang = lang === "en" ? "pt" : "en";
 ---
@@ -13,6 +14,10 @@ const currentLang = lang === "en" ? "pt" : "en";
       x-on:click="setTimeout(() => window.location.reload(), 500)"
       class="rounded-md p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:dark:ring-primary-500"
     >
+      <span class="sr-only">
+        {t("sr-only-language")}
+      </span>
+
       <span id="lang" class="text-lg text-primary-700 dark:text-primary-400"
         >{currentLang}</span
       >

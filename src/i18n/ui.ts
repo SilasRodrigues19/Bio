@@ -7,6 +7,13 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
+    'sr-only-language': 'Change language',
+    'sr-only-theme': 'Toggle theme',
+    'sr-only-menu': 'Toggle menu',
+    'sr-only-page': 'Current page',
+    'sr-only-footer': 'Footer',
+    'sr-only-header': 'Header',
+
     'layout.scroll': 'Scroll to top',
 
     'breadcrumb.home': 'Home',
@@ -54,9 +61,16 @@ export const ui = {
     'footer.nav.social': 'Social',
     'footer.nav.contact': 'Contact',
     'footer.copy': 'All rights reserved.',
-    'footer.terms': 'Terms and Privacy',
+    'footer.terms': 'Terms and Conditions',
   },
   pt: {
+    'sr-only-language': 'Alterar idioma',
+    'sr-only-theme': 'Alternar tema',
+    'sr-only-menu': 'Alternar menu',
+    'sr-only-page': 'Página atual',
+    'sr-only-footer': 'Rodapé',
+    'sr-only-header': 'Cabeçalho',
+
     'layout.scroll': 'Rolar para o topo',
 
     'breadcrumb.home': 'Início',
@@ -106,7 +120,7 @@ export const ui = {
     'footer.nav.social': 'Social',
     'footer.nav.contact': 'Contato',
     'footer.copy': 'Todos os direitos reservados.',
-    'footer.terms': 'Termos e Privacidade',
+    'footer.terms': 'Termos e Condições',
   },
 } as const;
 
