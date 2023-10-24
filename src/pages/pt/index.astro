@@ -14,8 +14,8 @@ import Layout from "@/layouts/Layout.astro";
       <div
         x-data="{ scrollPosition: 0 }"
         x-on:scroll.window="scrollPosition = window.pageYOffset"
-        :class="{ 'fixed top-22': scrollPosition > 100, 'xs:static sm:fixed sm:top-2' : scrollPosition > 450 }"
-        class="my-4 flex flex-col gap-4 sm:gap-6"
+        :class="{ 'translate-y-44': scrollPosition > 100, 'translate-y-full' : scrollPosition > 450 }"
+        class="my-4 flex transform flex-col gap-4 transition-all duration-1000 ease-in-out sm:gap-6"
       >
         <h1
           class="text-4xl font-medium tracking-tight text-primary-950/70 dark:text-primary-200/70 sm:text-3xl lg:text-5xl"
