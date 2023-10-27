@@ -1,5 +1,10 @@
 ---
+import Divider from "@/components/Divider.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const currentDate = new Date();
+const myBirthday = new Date("1999-04-22");
+const age = currentDate.getFullYear() - myBirthday.getFullYear();
 ---
 
 <Layout title="Bio - Silas Rodrigues | About." description="About page">
@@ -8,14 +13,187 @@ import Layout from "@/layouts/Layout.astro";
       class="mx-auto mt-12 max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8"
     >
       <div class="my-4 flex flex-col gap-4 sm:gap-6">
-        <h1 class="text-4xl font-medium tracking-tight sm:text-3xl lg:text-5xl">
-          About page.
+        <h1
+          class="text-4xl font-medium tracking-tight text-primary-950/70 dark:text-primary-200/70 sm:text-3xl lg:text-5xl"
+        >
+          Sobre mim.
         </h1>
         <p
-          class="text max-w-xl text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+          class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
         >
-          Coming soon...
+          Olá, sou o Silas, um desenvolvedor web de {age} anos, fascinado por
+          tecnologia.
         </p>
+
+        <h2
+          class="text-3xl font-medium tracking-tight text-primary-950/70 dark:text-primary-200/70 sm:text-2xl lg:text-4xl"
+        >
+          O início
+        </h2>
+
+        <p
+          class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+        >
+          Minha jornada no mundo da tecnologia começou em 2017 quando eu havia
+          acabado de me formar no Ensino Médio e então tomei a decisão de
+          iniciar um Tecnológo em Análise e Desenvolvimento de Sistemas, desde
+          então venho trilhando minha jornada como desenvolvedor.
+        </p>
+
+        <Divider />
+
+        <h2
+          class="text-3xl font-medium tracking-tight text-primary-950/70 dark:text-primary-200/70 sm:text-2xl lg:text-4xl"
+        >
+          Interesses
+        </h2>
+
+        <p
+          class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+        >
+          Eu tenho interesse na área de desenvolvimento web de um modo geral.
+          Possuo bastante interesse e um certo domínio com o ecossistema
+          JavaScript e me sinto confortável para trabalhar com isso, atuando
+          como backend ou frontend.
+        </p>
+
+        <Divider />
+
+        <h2
+          class="text-3xl font-medium tracking-tight text-primary-950/70 dark:text-primary-200/70 sm:text-2xl lg:text-4xl"
+        >
+          Conhecimentos
+        </h2>
+
+        <div
+          class="grid grid-cols-2 gap-2 text-primary-950/70 dark:text-primary-200/70"
+        >
+          <div class="flex flex-col space-y-6">
+            <p
+              class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+            >
+              Backend
+            </p>
+            <div class="backend flex gap-4">
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="teenyicons:firebase-solid"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="akar-icons:node-fill"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="simple-icons:express"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="simple-icons:fastify"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="simple-icons:oracle"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="file-icons:prisma"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="file-icons:php"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="simple-icons:codeigniter"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="bxl:postgresql"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="devicon-plain:mysql"></span>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-6">
+            <p
+              class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+            >
+              Frontend
+            </p>
+            <div class="frontend flex gap-4">
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="file-icons:nextjs"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="teenyicons:react-outline"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-width="25"
+                data-height="25"
+                data-icon="simple-icons:astro"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="bxl:tailwind-css"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="fa6-brands:sass"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="simple-icons:chakraui"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="mdi:material-ui"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="file-icons:styledcomponents"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="mdi:language-javascript"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="mdi:language-typescript"
+                data-width="25"
+                data-height="25"></span>
+              <span
+                class="iconify transition-transform hover:scale-125"
+                data-icon="bxl:jquery"
+                data-width="25"
+                data-height="25"></span>
+            </div>
+          </div>
+        </div>
+        <Divider />
       </div>
     </div>
   </section>
