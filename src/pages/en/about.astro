@@ -5,9 +5,17 @@ import Layout from "@/layouts/Layout.astro";
 const currentDate = new Date();
 const myBirthday = new Date("1999-04-22");
 const age = currentDate.getFullYear() - myBirthday.getFullYear();
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Bio - Silas Rodrigues | About." description="About page">
+<Layout
+  title={t("about.layout.title")}
+  description={t("about.layout.description")}
+>
   <section class="min-h-screen py-16 sm:py-20">
     <div
       class="mx-auto mt-12 max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8"
@@ -21,8 +29,10 @@ const age = currentDate.getFullYear() - myBirthday.getFullYear();
         <p
           class="text text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
         >
-          Hey, I'm Silas, I'm {age} years old and I'm a web developer fascinated
-          by technology.
+          I'm a {age} years old Brazilian developer, currently living in São
+          Paulo, Brazil. I'm a self-taught developer, passionate about
+          technology and programming. I'm always looking for new challenges and
+          opportunities to learn and grow as a professional.
         </p>
 
         <h2
@@ -65,7 +75,7 @@ const age = currentDate.getFullYear() - myBirthday.getFullYear();
         </h2>
 
         <div
-          class="grid grid-cols-2 gap-2 text-primary-950/70 dark:text-primary-200/70"
+          class="grid gap-12 text-primary-950/70 dark:text-primary-200/70 sm:grid-cols-1 md:grid-cols-2"
         >
           <div class="flex flex-col space-y-6">
             <p
@@ -73,7 +83,7 @@ const age = currentDate.getFullYear() - myBirthday.getFullYear();
             >
               Backend
             </p>
-            <div class="backend flex gap-4">
+            <div class="backend flex flex-wrap gap-4">
               <span
                 class="iconify transition-transform hover:scale-125"
                 data-icon="teenyicons:firebase-solid"
@@ -133,7 +143,7 @@ const age = currentDate.getFullYear() - myBirthday.getFullYear();
             >
               Frontend
             </p>
-            <div class="frontend flex gap-4">
+            <div class="frontend flex flex-wrap gap-4">
               <span
                 class="iconify transition-transform hover:scale-125"
                 data-width="25"
