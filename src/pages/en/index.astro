@@ -1,11 +1,16 @@
 ---
 import Mockup from "@/components/Mockup.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Bio - Silas Rodrigues."
-  description="Social media links, personal links and ways to contact me"
+  title={t("home.layout.title")}
+  description={t("home.layout.description")}
 >
   <section class="min-h-screen py-2 sm:py-4">
     <div

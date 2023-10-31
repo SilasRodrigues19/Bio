@@ -81,11 +81,15 @@ const pageLinks = [
 	}
 ]
 
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title='Bio - Silas Rodrigues | Social.'
-  description='Social links page'
+  title={t("social.layout.title")}
+  description={t("social.layout.description")}
 >
   <section class="py-16 sm:py-20">
 		<div class="mx-auto max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8 mt-12">

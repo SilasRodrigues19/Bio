@@ -2,11 +2,15 @@
 import Layout from "@/layouts/Layout.astro";
 
 import pdf from "/resume.pdf";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Bio - Silas Rodrigues | Currículo."
-  description="Página de currículo"
+  title={t("resume.layout.title")}
+  description={t("resume.layout.description")}
 >
   <section class="relative py-16 sm:py-32">
     <div
