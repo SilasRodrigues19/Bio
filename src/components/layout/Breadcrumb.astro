@@ -19,6 +19,7 @@ const translations = {
   about: t("breadcrumb.about"),
   contact: t("breadcrumb.contact"),
   privacy: t("breadcrumb.privacy"),
+  resume: t("breadcrumb.resume"),
   en: t("breadcrumb.en"),
   pt: t("breadcrumb.pt"),
 };
@@ -65,12 +66,18 @@ const translatedPath =
           )
         }
         <span
-          class="select-none capitalize text-primary-700 dark:text-primary-300"
+          class="select-none capitalize text-primary-950/70 dark:text-primary-200/70"
         >
           {
-            ["social", "about", "contact", "privacy", "en", "pt"].includes(
-              currentPath,
-            )
+            [
+              "social",
+              "about",
+              "contact",
+              "resume",
+              "privacy",
+              "en",
+              "pt",
+            ].includes(currentPath)
               ? translatedPath
               : "404"
           }
