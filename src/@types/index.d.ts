@@ -5,7 +5,7 @@
  * @returns {object} a new Typed object
  */
 
-declare module 'typed.js' {
+declare module "typed.js" {
   export interface TypedOptions {
     /**
      * strings to be typed

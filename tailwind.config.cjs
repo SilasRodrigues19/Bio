@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme');
-let colors = require('tailwindcss/colors');
+const defaultTheme = require("tailwindcss/defaultTheme");
+let colors = require("tailwindcss/colors");
 
-delete colors['lightBlue'];
-delete colors['warmGray'];
-delete colors['trueGray'];
-delete colors['coolGray'];
-delete colors['blueGray'];
+delete colors["lightBlue"];
+delete colors["warmGray"];
+delete colors["trueGray"];
+delete colors["coolGray"];
+delete colors["blueGray"];
 
-colors = { ...colors, ...{ transparent: 'transparent' } };
+colors = { ...colors, ...{ transparent: "transparent" } };
 
 module.exports = {
   darkMode: "class",
@@ -40,11 +40,11 @@ module.exports = {
         ...defaultTheme.screens,
       },
       backgroundSize: {
-        'size-200': '200% 200%',
+        "size-200": "200% 200%",
       },
       backgroundPosition: {
-        'pos-0': '0% 0%',
-        'pos-100': '100% 100%',
+        "pos-0": "0% 0%",
+        "pos-100": "100% 100%",
       },
     },
   },
