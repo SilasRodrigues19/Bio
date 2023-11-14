@@ -7,6 +7,8 @@
     "start": "astro dev --host --open",
     "build": "astro build",
     "preview": "astro preview --host --open",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
     "astro": "astro"
   },
   "dependencies": {
