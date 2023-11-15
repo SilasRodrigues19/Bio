@@ -67,7 +67,7 @@ const t = useTranslations(lang);
               <input
                 id="email"
                 type="email"
-                class="w-full rounded bg-primary-200 p-3 dark:bg-primary-800"
+                class="w-full rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
               />
             </div>
             <div>
@@ -80,13 +80,13 @@ const t = useTranslations(lang);
                   x-on:focus="textareaHeight = $event.target.scrollHeight + 'px'"
                   id="message"
                   rows="3"
-                  class="w-full resize-none rounded bg-primary-200 p-3 dark:bg-primary-800"
+                  class="w-full resize-none rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
                 ></textarea>
               </div>
             </div>
             <button
               type="submit"
-              class="bg-size-200 bg-pos-0 hover:bg-pos-100 flex w-full items-center justify-center gap-4 rounded bg-gradient-to-l from-violet-500/25 to-cyan-300/25 p-3 text-sm font-bold uppercase tracking-wide text-primary-500 transition-all duration-500 hover:bg-gradient-to-r dark:text-primary-400"
+              class="flex w-full items-center justify-center gap-4 rounded bg-gradient-to-l from-violet-500/25 to-cyan-300/25 bg-size-200 bg-pos-0 p-3 text-sm font-bold uppercase tracking-wide text-primary-500 transition-all duration-500 hover:bg-gradient-to-r hover:bg-pos-100 dark:text-primary-400"
             >
               Enviar mensagem
               <span class="iconify" data-icon="ph:paper-plane-tilt-fill"></span>

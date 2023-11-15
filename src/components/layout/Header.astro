@@ -22,6 +22,11 @@ const links = [
     name: t("header.contact"),
     target: `/${lang}/contact/`,
   },
+  {
+    number: "04",
+    name: t("header.privacy"),
+    target: `/${lang}/privacy/`,
+  },
 ];
 ---
 
@@ -187,7 +192,7 @@ const links = [
             <a
               x-on:click="open = false"
               href={target}
-              class="group inline-flex py-6 text-3xl font-medium tracking-tight text-primary-700 transition focus-visible:outline-none dark:text-primary-400 sm:py-8
+              class="group inline-flex py-6 text-3xl font-medium tracking-tight text-primary-700 transition focus-visible:outline-none dark:text-primary-400 sm:py-4
               sm:text-4xl"
             >
               <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">

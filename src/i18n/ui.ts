@@ -72,6 +72,7 @@ export const ui = {
     "header.about": "About",
     "header.social": "Social",
     "header.contact": "Contact",
+    "header.privacy": "Privacy",    
 
     "footer.description":
       "Bio - Silas Rodrigues. Career, projects and how to find me online.",
@@ -150,6 +151,7 @@ export const ui = {
     "header.about": "Sobre",
     "header.social": "Social",
     "header.contact": "Contato",
+    "header.privacy": "Privacidade",
 
     "footer.description":
       "Bio - Silas Rodrigues. Carreira, projetos e maneiras de me encontrar online.",
