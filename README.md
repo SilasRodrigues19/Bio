@@ -48,12 +48,13 @@
 
 ## About The Project
 
-| Light Desktop                                   | Dark Desktop                                    |
-| ----------------------------------------------- | ----------------------------------------------- |
-| [![Preview][product-screenshot]][project-link]  | [![Preview][product-screenshot2]][project-link] |
-| Light Mobile                                    | Dark Mobile                                     |
-| [![Preview][product-screenshot3]][project-link] | [![Preview][product-screenshot4]][project-link] |
-
+| Dark Desktop                                     | Light Desktop                                     |
+| -----------------------------------------------  | ------------------------------------------------- |
+| [![Preview][desktop-home-dark]][project-link]    | [![Preview][desktop-home-light]][project-link]    |
+| [![Preview][desktop-about-dark]][project-link]   | [![Preview][desktop-about-light]][project-link]   |
+| [![Preview][desktop-social-dark]][project-link]  | [![Preview][desktop-social-light]][project-link]  |
+| [![Preview][desktop-contact-dark]][project-link] | [![Preview][desktop-contact-light]][project-link] |
+| [![Preview][desktop-policy-dark]][project-link]  | [![Preview][desktop-policy-light]][project-link]  |
 <hr>
 
 Slightly more simplified version of my [portfolio](https://github.com/SilasRodrigues19/Portfolio), with separate sections for social links, about, contact and an about me presentation
@@ -104,22 +105,27 @@ Technologies used in the project.
 ## Installation
 
 1. Clone the repo
+
    ```sh
    git clone https://github.com/SilasRodrigues19/Bio.git
    ```
 2. Install dependencies (you can use npm, pnpm, yarn or anything else)
+
    ```sh
    pnpm install
    ```
 3. In the project directory, you can run with the following
+
    ```sh
    pnpm run dev
    ```
 4. If the URL does not open automatically, access this link in your browser.
+
    ```sh
      http://localhost:4321/
    ```
 5. To access on your smartphone, use the same network and replace `localhost` with the machine address. `e.g. http://10.0.0.38:4321`
+
    ```
      IPv4 Address: 10.0.0.38
      Port: 4321
@@ -165,10 +171,16 @@ Project Link: [https://github.com/SilasRodrigues19/Bio](https://github.com/Silas
 [license-shield]: https://img.shields.io/github/license/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
 [license-url]: https://github.com/SilasRodrigues19/Bio/blob/master/LICENSE
 [license-url]: https://github.com/SilasRodrigues19/Bio/blob/master/LICENSE.txt
-[product-screenshot]: ./public/screenshots/dark-desktop.png
-[product-screenshot2]: ./public/screenshots/light-desktop.png
-[product-screenshot3]: ./public/screenshots/dark-mobile.png
-[product-screenshot4]: ./public/screenshots/light-mobile.png
+[desktop-home-dark]: ./public/screenshots/desktop-home-dark.png
+[desktop-home-light]: ./public/screenshots/desktop-home-light.png
+[desktop-about-dark]: ./public/screenshots/desktop-about-dark.png
+[desktop-about-light]: ./public/screenshots/desktop-about-light.png
+[desktop-social-dark]: ./public/screenshots/desktop-social-dark.png
+[desktop-social-light]: ./public/screenshots/desktop-social-light.png
+[desktop-contact-dark]: ./public/screenshots/desktop-contact-dark.png
+[desktop-contact-light]: ./public/screenshots/desktop-contact-light.png
+[desktop-policy-dark]: ./public/screenshots/desktop-policy-dark.png
+[desktop-policy-light]: ./public/screenshots/desktop-policy-light.png
 [project-link]: https://bio-silas.vercel.app/
 
 <br><hr>
