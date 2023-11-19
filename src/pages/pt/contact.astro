@@ -2,9 +2,60 @@
 import Layout from "@/layouts/Layout.astro";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import sgMail from '@sendgrid/mail';
+sgMail.setApiKey(import.meta.env.SG_API);
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const errors = { name: '', email: '', message: '' };
+
+if (Astro.request.method === "POST") {
+
+  try {
+
+    const data = await Astro.request.formData();
+    const name = data.get("name");
+    const email = data.get("email");
+    const message = data.get("message").toString();
+
+    if (typeof name !== "string" || name.length < 2) errors.name += "Enter a valid name";
+
+    if (typeof email !== "string" || !email.includes("@")) errors.email += "Enter a valid email";
+
+    if (typeof message !== "string" || message.length < 10) errors.message += "The message must be at least 10 characters long";
+
+    const hasErrors = Object.values(errors).some(error => error);
+
+
+    if (!hasErrors) {
+
+      const msg = {
+        to: 'silasrodrigues.fatec@gmail.com',
+        from: 'silasrodrigues.fatec@gmail.com',
+        replyTo: { email: email.toString(), name: name.toString() },
+        subject: `New message from ${name}`,
+        text: message,
+      }
+  
+      await sgMail.send(msg).then(() => {
+        Astro.response.status = 200;
+        console.log("Email sent");
+      }).catch((error) => {
+        console.error(error);
+      });
+
+      return Astro.redirect(`/${lang}/contact/`);
+
+    }
+
+
+  } catch (error) {
+    if (error instanceof Error) console.error(error.message);
+  }
+
+}
+
 ---
 
 <Layout
@@ -51,12 +102,13 @@ const t = useTranslations(lang);
               decoding="async"
             />
           </div>
-          <form class="space-y-6 text-primary-950/70 dark:text-primary-200/70">
+          <form class="space-y-6 text-primary-950/70 dark:text-primary-200/70" method="POST">
             <div>
               <label for="name" class="text-sm">Nome</label>
               <input
                 required
                 id="name"
+                name="name"
                 type="text"
                 placeholder=""
                 class="w-full rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
@@ -66,6 +118,7 @@ const t = useTranslations(lang);
               <label for="email" class="text-sm">Email</label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 class="w-full rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
               />
@@ -79,13 +132,13 @@ const t = useTranslations(lang);
                   x-bind:style="'height: ' + textareaHeight"
                   x-on:focus="textareaHeight = $event.target.scrollHeight + 'px'"
                   id="message"
+                  name="message"
                   rows="3"
                   class="w-full resize-none rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
                 ></textarea>
               </div>
             </div>
             <button
-              type="submit"
               class="flex w-full items-center justify-center gap-4 rounded bg-gradient-to-l from-violet-500/25 to-cyan-300/25 bg-size-200 bg-pos-0 p-3 text-sm font-bold uppercase tracking-wide text-primary-500 transition-all duration-500 hover:bg-gradient-to-r hover:bg-pos-100 dark:text-primary-400"
             >
               Enviar mensagem
