@@ -2,60 +2,57 @@
 import Layout from "@/layouts/Layout.astro";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import sgMail from '@sendgrid/mail';
+import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(import.meta.env.SG_API);
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const errors = { name: '', email: '', message: '' };
+const errors = { name: "", email: "", message: "" };
 
 if (Astro.request.method === "POST") {
-
   try {
-
     const data = await Astro.request.formData();
     const name = data.get("name");
     const email = data.get("email");
     const message = data.get("message").toString();
 
-    if (typeof name !== "string" || name.length < 2) errors.name += "Enter a valid name";
+    if (typeof name !== "string" || name.length < 2)
+      errors.name += "Enter a valid name";
 
-    if (typeof email !== "string" || !email.includes("@")) errors.email += "Enter a valid email";
+    if (typeof email !== "string" || !email.includes("@"))
+      errors.email += "Enter a valid email";
 
-    if (typeof message !== "string" || message.length < 10) errors.message += "The message must be at least 10 characters long";
+    if (typeof message !== "string" || message.length < 10)
+      errors.message += "The message must be at least 10 characters long";
 
-    const hasErrors = Object.values(errors).some(error => error);
-
+    const hasErrors = Object.values(errors).some((error) => error);
 
     if (!hasErrors) {
-
       const msg = {
-        to: 'silasrodrigues.fatec@gmail.com',
-        from: 'silasrodrigues.fatec@gmail.com',
+        to: "silasrodrigues.fatec@gmail.com",
+        from: "silasrodrigues.fatec@gmail.com",
         replyTo: { email: email.toString(), name: name.toString() },
         subject: `New message from ${name}`,
         text: message,
-      }
-  
-      await sgMail.send(msg).then(() => {
-        Astro.response.status = 200;
-        console.log("Email sent");
-      }).catch((error) => {
-        console.error(error);
-      });
+      };
+
+      await sgMail
+        .send(msg)
+        .then(() => {
+          Astro.response.status = 200;
+          console.log("Email sent");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
 
       return Astro.redirect(`/${lang}/contact/`);
-
     }
-
-
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
   }
-
 }
-
 ---
 
 <Layout
@@ -102,20 +99,27 @@ if (Astro.request.method === "POST") {
               decoding="async"
             />
           </div>
-          <form class="space-y-6 text-primary-950/70 dark:text-primary-200/70" method="POST">
+          <form
+            class="space-y-6 text-primary-950/70 dark:text-primary-200/70"
+            method="POST"
+          >
             <div>
               <label for="name" class="text-sm">Nome</label>
+              {errors.name && <p class="text-sm text-red-500">{errors.name}</p>}
               <input
-                required
                 id="name"
                 name="name"
                 type="text"
-                placeholder=""
                 class="w-full rounded bg-primary-200 p-3 outline-none focus:ring-2 focus:ring-primary-400 dark:bg-primary-800"
               />
             </div>
             <div>
               <label for="email" class="text-sm">Email</label>
+              {
+                errors.email && (
+                  <p class="text-sm text-red-500">{errors.email}</p>
+                )
+              }
               <input
                 id="email"
                 name="email"
@@ -126,6 +130,11 @@ if (Astro.request.method === "POST") {
             <div>
               <label for="message" class="text-sm">Mensagem</label>
               <div x-data="{ textareaHeight: '12rem' }">
+                {
+                  errors.message && (
+                    <p class="text-sm text-red-500">{errors.message}</p>
+                  )
+                }
                 <textarea
                   x-on:input="textareaHeight = $event.target.scrollHeight + 'px'"
                   x-on:blur="textareaHeight = '12rem'"
