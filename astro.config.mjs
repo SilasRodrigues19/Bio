@@ -9,10 +9,15 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: "https://bio-silas.vercel.app/",
-  integrations: [tailwind(), sitemap(), linkPreview(), compress({
-    SVG: false,
-    Exclude: [File => File.match(/\/assets\/.*\.svg$/)]
-  })],
+  integrations: [
+    tailwind(),
+    sitemap(),
+    linkPreview(),
+    compress({
+      SVG: false,
+      Exclude: [(File) => File.match(/\/assets\/.*\.svg$/)],
+    }),
+  ],
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
 });

@@ -72,7 +72,7 @@ export const ui = {
     "header.about": "About",
     "header.social": "Social",
     "header.contact": "Contact",
-    "header.privacy": "Privacy",    
+    "header.privacy": "Privacy",
 
     "footer.description":
       "Bio - Silas Rodrigues. Career, projects and how to find me online.",
@@ -84,6 +84,22 @@ export const ui = {
     "footer.nav.privacy": "Privacy Policy",
     "footer.copy": "All rights reserved.",
     "footer.terms": "Terms and Conditions",
+
+    // Page Components
+    "contact.title": "Get in touch",
+    "contact.paragraph-before": "Hate forms? Send us an\u00a0",
+    "contact.paragraph-after": "\u00a0instead.",
+    "contact.form.title": "Let's talk!",
+    "contact.form.paragraph":
+      "Send your message and it will be responded to as quickly as possible.",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Message",
+    "contact.form.button": "Send message",
+    "contact.form.name.error": "Enter a valid name",
+    "contact.form.email.error": "Enter a valid email",
+    "contact.form.message.error":
+      "The message must be at least 10 characters long",
   },
   pt: {
     "home.layout.title": "Bio - Silas Rodrigues | Início",
@@ -164,6 +180,22 @@ export const ui = {
     "footer.nav.privacy": "Política de Privacidade",
     "footer.copy": "Todos os direitos reservados.",
     "footer.terms": "Termos e Condições",
+
+    // Page Components
+    "contact.title": "Contato",
+    "contact.paragraph-before": "Não gosta de formulários? Envie um\u00a0",
+    "contact.paragraph-after": "\u00a0tradicional.",
+    "contact.form.title": "Vamos conversar!",
+    "contact.form.paragraph":
+      "Envie sua mensagem e ela será respondida o mais breve possível.",
+    "contact.form.name": "Nome",
+    "contact.form.email": "Email",
+    "contact.form.message": "Mensagem",
+    "contact.form.button": "Enviar mensagem",
+    "contact.form.name.error": "Insira um nome válido",
+    "contact.form.email.error": "Insira um email válido",
+    "contact.form.message.error":
+      "A mensagem deve ter pelo menos 10 caracteres",
   },
 } as const;
 

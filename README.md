@@ -49,12 +49,13 @@
 ## About The Project
 
 | Dark Desktop                                     | Light Desktop                                     |
-| -----------------------------------------------  | ------------------------------------------------- |
+| ------------------------------------------------ | ------------------------------------------------- |
 | [![Preview][desktop-home-dark]][project-link]    | [![Preview][desktop-home-light]][project-link]    |
 | [![Preview][desktop-about-dark]][project-link]   | [![Preview][desktop-about-light]][project-link]   |
 | [![Preview][desktop-social-dark]][project-link]  | [![Preview][desktop-social-light]][project-link]  |
 | [![Preview][desktop-contact-dark]][project-link] | [![Preview][desktop-contact-light]][project-link] |
 | [![Preview][desktop-policy-dark]][project-link]  | [![Preview][desktop-policy-light]][project-link]  |
+
 <hr>
 
 Slightly more simplified version of my [portfolio](https://github.com/SilasRodrigues19/Portfolio), with separate sections for social links, about, contact and an about me presentation
@@ -109,21 +110,25 @@ Technologies used in the project.
    ```sh
    git clone https://github.com/SilasRodrigues19/Bio.git
    ```
+
 2. Install dependencies (you can use npm, pnpm, yarn or anything else)
 
    ```sh
    pnpm install
    ```
+
 3. In the project directory, you can run with the following
 
    ```sh
    pnpm run dev
    ```
+
 4. If the URL does not open automatically, access this link in your browser.
 
    ```sh
      http://localhost:4321/
    ```
+
 5. To access on your smartphone, use the same network and replace `localhost` with the machine address. `e.g. http://10.0.0.38:4321`
 
    ```
@@ -131,6 +136,7 @@ Technologies used in the project.
      Port: 4321
      Access URL: http://10.0.0.38:4321
    ```
+
    <!-- CONTRIBUTING -->
 
 ## Contributing
