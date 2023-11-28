@@ -100,6 +100,24 @@ export const ui = {
     "contact.form.email.error": "Enter a valid email",
     "contact.form.message.error":
       "The message must be at least 10 characters long",
+    "home.paragraph": "Front end Developer",
+    "about.presentation.title": "About me.",
+    "about.presentation.paragraph-before": "I'm a",
+    "about.presentation.paragraph-after":
+      "years old Brazilian developer, currently living in São Paulo, Brazil. I'm a self-taught developer, passionate about technology and programming. I'm always looking for new challenges and opportunities to learn and grow as a professional.",
+    "about.beginning.title": "The beginning",
+    "about.beginning.paragraph":
+      "My journey in the world of technology began in 2017 when I had just graduated from High School and then decided to pursue a degree in Analysis and Systems Development. Since then, I've been forging my path as a developer.",
+    "about.interests.title": "Interests",
+    "about.interests.paragraph":
+      "I have a general interest in web development. I possess a strong inclination and a certain mastery of the JavaScript ecosystem and feel comfortable working with it, both as backend and frontend.",
+    "about.skills.title": "Skills",
+    "social.label.information": "Most relevant personal information",
+    "social.label.information.resume": "Resume",
+    "social.label.projects": "Open source projects.",
+    "social.label.media": "Social media.",
+    "social.label.support": "Support me.",
+    "social.title": "Link me.",
   },
   pt: {
     "home.layout.title": "Bio - Silas Rodrigues | Início",
@@ -196,6 +214,24 @@ export const ui = {
     "contact.form.email.error": "Insira um email válido",
     "contact.form.message.error":
       "A mensagem deve ter pelo menos 10 caracteres",
+    "home.paragraph": "Desenvolvedor Front end",
+    "about.presentation.title": "Sobre mim.",
+    "about.presentation.paragraph-before": "Sou um desenvolvedor web, tenho",
+    "about.presentation.paragraph-after":
+      "anos de idade e atualmente moro em São Paulo. Sou uma pessoa autodidata, apaixonado por tecnologia e programação. Estou sempre em busca de novos desafios e oportunidades para aprender e crescer profissionalmente.",
+    "about.beginning.title": "O início",
+    "about.beginning.paragraph":
+      "Minha jornada no mundo da tecnologia começou em 2017 quando eu havia acabado de me formar no Ensino Médio e então tomei a decisão de iniciar um Tecnológo em Análise e Desenvolvimento de Sistemas, desde então venho trilhando minha jornada como desenvolvedor.",
+    "about.interests.title": "Interesses",
+    "about.interests.paragraph":
+      "Eu tenho interesse na área de desenvolvimento web de um modo geral. Possuo bastante interesse e um certo domínio com o ecossistema JavaScript e me sinto confortável para trabalhar com isso, atuando como backend ou frontend.",
+    "about.skills.title": "Conhecimentos",
+    "social.label.information": "Informações pessoais mais relevantes",
+    "social.label.information.resume": "Currículo",
+    "social.label.projects": "Projetos de código aberto.",
+    "social.label.media": "Redes sociais.",
+    "social.label.support": "Apoie-me.",
+    "social.title": "Conectar.",
   },
 } as const;
 
