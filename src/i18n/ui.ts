@@ -100,6 +100,7 @@ export const ui = {
     "contact.form.email.error": "Enter a valid email",
     "contact.form.message.error":
       "The message must be at least 10 characters long",
+    "home.paragraph": "Front end Developer",
   },
   pt: {
     "home.layout.title": "Bio - Silas Rodrigues | Início",
@@ -196,6 +197,7 @@ export const ui = {
     "contact.form.email.error": "Insira um email válido",
     "contact.form.message.error":
       "A mensagem deve ter pelo menos 10 caracteres",
+    "home.paragraph": "Desenvolvedor Front end",
   },
 } as const;
 
