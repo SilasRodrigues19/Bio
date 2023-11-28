@@ -112,6 +112,12 @@ export const ui = {
     "about.interests.paragraph":
       "I have a general interest in web development. I possess a strong inclination and a certain mastery of the JavaScript ecosystem and feel comfortable working with it, both as backend and frontend.",
     "about.skills.title": "Skills",
+    "social.label.information": "Most relevant personal information",
+    "social.label.information.resume": "Resume",
+    "social.label.projects": "Open source projects.",
+    "social.label.media": "Social media.",
+    "social.label.support": "Support me.",
+    "social.title": "Link me.",
   },
   pt: {
     "home.layout.title": "Bio - Silas Rodrigues | Início",
@@ -220,6 +226,12 @@ export const ui = {
     "about.interests.paragraph":
       "Eu tenho interesse na área de desenvolvimento web de um modo geral. Possuo bastante interesse e um certo domínio com o ecossistema JavaScript e me sinto confortável para trabalhar com isso, atuando como backend ou frontend.",
     "about.skills.title": "Conhecimentos",
+    "social.label.information": "Informações pessoais mais relevantes",
+    "social.label.information.resume": "Currículo",
+    "social.label.projects": "Projetos de código aberto.",
+    "social.label.media": "Redes sociais.",
+    "social.label.support": "Apoie-me.",
+    "social.title": "Conectar.",
   },
 } as const;
 
