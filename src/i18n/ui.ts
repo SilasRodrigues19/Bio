@@ -19,6 +19,8 @@ export const ui = {
     "resume.layout.title": "Bio - Silas Rodrigues | Resume",
     "resume.layout.description":
       "Explore the professional journey and skills of Silas Rodrigues through his detailed resume. Get insights into his experience, expertise, and accomplishments in web development and technology.",
+    "resume.pdf.unsupported":
+      "Your browser does not support PDF viewer. You can view and download the file in the button below.",
     "social.layout.title": "Bio - Silas Rodrigues | Social",
     "social.layout.description":
       "Explore a collection of Silas Rodrigues' most relevant personal information, open-source projects and social media profiles. Connect with him through platforms like Portfolio, Github, Twitter, and more.",
@@ -132,6 +134,8 @@ export const ui = {
     "resume.layout.title": "Bio - Silas Rodrigues | Currículo",
     "resume.layout.description":
       "Explore a jornada profissional e as habilidades de Silas Rodrigues por meio de seu currículo detalhado. Obtenha informações sobre sua experiência, especialização e realizações em desenvolvimento web e tecnologia.",
+    "resume.pdf.unsupported":
+      "Seu navegador não suporta visualização de PDF. Você pode visualizar e baixar o arquivo no botão abaixo.",
     "social.layout.title": "Bio - Silas Rodrigues | Social",
     "social.layout.description":
       "Explore uma coleção das informações pessoais mais relevantes de Silas Rodrigues, projetos de código aberto e perfis de redes sociais. Conecte-se com ele por meio de plataformas como Portfolio, Github, Twitter e muito mais.",
