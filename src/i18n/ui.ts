@@ -97,7 +97,8 @@ export const ui = {
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
-    "contact.form.button": "Send message",
+    "contact.form.button-default": "Send message",
+    "contact.form.button-sending": "Sending",
     "contact.form.name.error": "Enter a valid name",
     "contact.form.email.error": "Enter a valid email",
     "contact.form.message.error":
@@ -213,7 +214,8 @@ export const ui = {
     "contact.form.name": "Nome",
     "contact.form.email": "Email",
     "contact.form.message": "Mensagem",
-    "contact.form.button": "Enviar mensagem",
+    "contact.form.button-default": "Enviar mensagem",
+    "contact.form.button-sending": "Enviando",
     "contact.form.name.error": "Insira um nome válido",
     "contact.form.email.error": "Insira um email válido",
     "contact.form.message.error":

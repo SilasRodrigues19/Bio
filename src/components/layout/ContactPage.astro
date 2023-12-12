@@ -17,13 +17,13 @@ if (Astro.request.method === "POST") {
     const email = data.get("email");
     const message = data.get("message").toString();
 
-    if (typeof name !== "string" || name.length < 2)
+    if (typeof name !== "string" || name.trim().length < 2)
       errors.name += t("contact.form.name.error");
 
     if (typeof email !== "string" || !email.includes("@"))
       errors.email += t("contact.form.email.error");
 
-    if (typeof message !== "string" || message.length < 10)
+    if (typeof message !== "string" || message.trim().length < 10)
       errors.message += t("contact.form.message.error");
 
     const hasErrors = Object.values(errors).some((error) => error);
@@ -102,6 +102,8 @@ if (Astro.request.method === "POST") {
             />
           </div>
           <form
+            x-data="{ isSubmitting: false }"
+            @submit.prevent="if (!isSubmitting) {isSubmitting = true; $el.submit()}"
             class="space-y-6 text-primary-950/70 dark:text-primary-200/70"
             method="POST"
           >
@@ -158,10 +160,20 @@ if (Astro.request.method === "POST") {
               </div>
             </div>
             <button
+              x-bind:disabled="isSubmitting"
               class="flex w-full items-center justify-center gap-4 rounded bg-gradient-to-l from-violet-500/25 to-cyan-300/25 bg-size-200 bg-pos-0 p-3 text-sm font-bold uppercase tracking-wide text-primary-500 transition-all duration-500 hover:bg-gradient-to-r hover:bg-pos-100 dark:text-primary-400"
             >
-              {t("contact.form.button")}
-              <span class="iconify" data-icon="ph:paper-plane-tilt-fill"></span>
+              <span x-show="!isSubmitting" class="flex items-center gap-2">
+                {t("contact.form.button-default")}
+                <span class="iconify" data-icon="ph:paper-plane-tilt-fill"
+                ></span>
+              </span>
+
+              <span x-show="isSubmitting" class="flex items-center gap-2">
+                {t("contact.form.button-sending")}
+                <span class="iconify" data-icon="eos-icons:bubble-loading"
+                ></span>
+              </span>
             </button>
           </form>
         </div>
