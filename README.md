@@ -93,6 +93,14 @@ Technologies used in the project.
 - [TypeScript](https://www.typescriptlang.org/)
   A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
+### SSR Dependencies
+
+- [@sendgrid/mail](https://www.npmjs.com/package/@sendgrid/mail)
+  This is a dedicated service for integration with the email endpoint of the [SendGrid v3 API](https://sendgrid.com/docs/api-reference/) 
+
+- [@astrojs/vercel](https://docs.astro.build/pt-br/guides/integrations-guide/vercel/)
+  This adapter allows Astro to deploy your SSR site to Vercel.
+
 ### Tools (Official and unofficial integrations for Astro)
 
 - [astro-compress](https://github.com/astro-community/AstroCompress)
@@ -166,15 +174,15 @@ Project Link: [https://github.com/SilasRodrigues19/Bio](https://github.com/Silas
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/SilasRodrigues19/Bio.svg?style=for-the-badge
 [contributors-url]: https://github.com/SilasRodrigues19/Bio/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/SilasRodrigues19/Bio.svg?style=for-the-badge
 [forks-url]: https://github.com/SilasRodrigues19/Bio/network/members
-[stars-shield]: https://img.shields.io/github/stars/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/SilasRodrigues19/Bio.svg?style=for-the-badge
 [stars-url]: https://github.com/SilasRodrigues19/Bio/stargazers
-[issues-shield]: https://img.shields.io/github/issues/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/SilasRodrigues19/Bio.svg?style=for-the-badge
 [issues-url]: https://github.com/SilasRodrigues19/Bio/issues
-[license-shield]: https://img.shields.io/github/license/SilasRodrigues19/NLW-IA.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/SilasRodrigues19/Bio.svg?style=for-the-badge
 [license-url]: https://github.com/SilasRodrigues19/Bio/blob/master/LICENSE
 [license-url]: https://github.com/SilasRodrigues19/Bio/blob/master/LICENSE.txt
 [desktop-home-dark]: ./public/screenshots/desktop-home-dark.png
