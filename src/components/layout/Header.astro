@@ -1,52 +1,63 @@
 ---
-
 import Testing from "@/components/Testing.astro";
 import LanguagePicker from "@/components/LanguagePicker.astro";
-import { getLangFromUrl } from '@/i18n/utils';
-const lang = getLangFromUrl(Astro.url);
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const links = [
   {
-    number: '01',
-    name: 'About',
-    target: `/${lang}/about/`
+    number: "01",
+    name: t("header.about"),
+    target: `/${lang}/about/`,
   },
   {
-    number: '02',
-    name: 'Social',
-    target: `/${lang}/social/`
+    number: "02",
+    name: t("header.social"),
+    target: `/${lang}/social/`,
   },
   {
-    number: '03',
-    name: 'Contact',
-    target: `/${lang}/contact/`
-  }
-]
-
+    number: "03",
+    name: t("header.contact"),
+    target: `/${lang}/contact/`,
+  },
+  {
+    number: "04",
+    name: t("header.privacy"),
+    target: `/${lang}/privacy/`,
+  },
+];
 ---
 
 <header
   @click="open ? window.scrollTo(0, 0) : null"
-   x-data="{ open: false }"
-  class="transition shadow-md fixed w-full z-10"
-  :class="{ 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
+  x-data="{ open: false, windowPosition: 0 }"
+  x-init="() => { window.addEventListener('scroll', () => { windowPosition = window.scrollY; }); }"
+  class="fixed z-10 w-full transition"
+  :class="{ 'bg-transparent dark:bg-transparent': !(windowPosition > 0) && (!open), 'bg-primary-500/10 dark:bg-primary-400/10 relative h-auto': open, 'bg-primary-50 dark:bg-primary-950': !(open) }"
+  aria-labelledby="header-navigation"
 >
-  <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
+  <h2 id="header-navigation" class="sr-only">
+    {t("sr-only-header")}
+  </h2>
+  <div
+    class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8"
+  >
     <div class="flex">
-      <a 
-      x-on:click='setTimeout(() => window.location.reload(), 500)'
-      href={`/${lang}`}
-      rel="noopener noreferrer"
-      class="select-none rounded-md p-4 focus-visible:ring-2 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
-    >
+      <a
+        x-on:click="window.scrollTo(0, 0)"
+        href={`/${lang}`}
+        rel="noopener noreferrer"
+        class="select-none rounded-md p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:dark:ring-primary-500"
+      >
         <span class="sr-only">Silas Rodrigues</span>
-        <img 
-          @click= "open = false"
+        <img
+          @click="open = false"
           :class="{ 'invert': ($store.theme.isDark) }"
-          class="h-8 w-auto -rotate-12 hover:rotate-0 transition-transform"
-          width="85" 
-          height="35" 
+          class="h-8 w-auto -rotate-12 transition-transform hover:rotate-0"
+          width="85"
+          height="35"
           src="/assets/logo.svg"
           alt="Website logo"
           loading="lazy"
@@ -54,64 +65,57 @@ const links = [
         />
       </a>
     </div>
-    
-    <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
 
+    <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
       <!-- <Testing user="SilasRodrigues19" repo="Portfolio" /> -->
 
       <LanguagePicker />
 
-      
       <button
         type="button"
-        class='text-primary-950 dark:text-primary-200 inline-flex h-14 w-14 items-center justify-center rounded-full transition
-        focus-visible:ring-2 focus-visible:outline-none focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600'
+        class="inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 transition focus-visible:outline-none
+        focus-visible:ring-2 focus-visible:ring-primary-600 dark:text-primary-200 focus-visible:dark:ring-primary-500"
         x-data
         @click="$store.theme.toggle()"
       >
-        <span class="sr-only">Toggle theme</span>
-          <svg 
-            width="30" 
-            height="30" 
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class='h-10 w-10 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 mt-2 dark:mt-0'
-          >
-            <image 
-              xlink:href="/assets/sun.svg" 
-              width="30" 
-              height="30" 
-            />
-          </svg>
+        <span class="sr-only">
+          {t("sr-only-theme")}
+        </span>
+        <svg
+          width="30"
+          height="30"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="mt-2 h-10 w-10 rotate-0 scale-100 transition-all dark:mt-0 dark:-rotate-90 dark:scale-0"
+        >
+          <image xlink:href="/assets/sun.svg" width="30" height="30" />
+        </svg>
 
-          <svg 
-            width="30" 
-            height="30" 
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class='h-10 w-10 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 dark:mt-2'
-          >
-            <image 
-              xlink:href="/assets/moon.svg" 
-              width="30" 
-              height="30" 
-            />
-          </svg>
-
+        <svg
+          width="30"
+          height="30"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="absolute h-10 w-10 rotate-90 scale-0 transition-all dark:mt-2 dark:rotate-0 dark:scale-100"
+        >
+          <image xlink:href="/assets/moon.svg" width="30" height="30" />
+        </svg>
       </button>
 
       <button
         type="button"
-        class="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition 
-        focus:outline-none focus-visible:ring-2 focus-visible:dark:ring-primary-500 focus-visible:ring-primary-600"
+        class="inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2
+        focus-visible:ring-primary-600 dark:text-primary-200 dark:hover:bg-primary-400/10 focus-visible:dark:ring-primary-500"
         @click="open = !open"
         aria-controls="website-menu"
         aria-expanded="false"
         :aria-expanded="open.toString()"
       >
-        <span class="sr-only">Toggle menu</span>
+        <span class="sr-only">
+          {t("sr-only-menu")}
+        </span>
 
-        <svg 
+        <svg
           x-cloak
           class="h-8 w-8 text-primary-950/70 dark:text-primary-200/70"
           :class="{ 'hidden': open, 'block': !(open) }"
@@ -120,10 +124,13 @@ const links = [
           aria-hidden="true"
           viewBox="0 0 24 24"
         >
-          <path fill="currentColor" d="M22 18.005c0 .55-.446.995-.995.995h-8.01a.995.995 0 0 1 0-1.99h8.01c.55 0 .995.445.995.995ZM22 12c0 .55-.446.995-.995.995H2.995a.995.995 0 1 1 0-1.99h18.01c.55 0 .995.446.995.995Zm-.995-5.01a.995.995 0 0 0 0-1.99H8.995a.995.995 0 1 0 0 1.99h12.01Z"/>
+          <path
+            fill="currentColor"
+            d="M22 18.005c0 .55-.446.995-.995.995h-8.01a.995.995 0 0 1 0-1.99h8.01c.55 0 .995.445.995.995ZM22 12c0 .55-.446.995-.995.995H2.995a.995.995 0 1 1 0-1.99h18.01c.55 0 .995.446.995.995Zm-.995-5.01a.995.995 0 0 0 0-1.99H8.995a.995.995 0 1 0 0 1.99h12.01Z"
+          ></path>
         </svg>
 
-        <svg 
+        <svg
           x-cloak
           class="h-8 w-8 text-primary-950/70 dark:text-primary-200/70"
           :class="{ 'block': open, 'hidden': !(open) }"
@@ -132,9 +139,12 @@ const links = [
           aria-hidden="true"
           viewBox="0 0 16 16"
         >
-          <path fill="currentColor" fill-rule="evenodd" d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94L5.28 4.22Z" clip-rule="evenodd"/>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94L5.28 4.22Z"
+            clip-rule="evenodd"></path>
         </svg>
-
       </button>
     </div>
   </div>
@@ -144,54 +154,76 @@ const links = [
     id="website-menu"
     x-cloak
     x-show="open"
-    x-collapse
-    x-collapse.duration.800ms
-    x-transition.delay.50ms
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 scale-50"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 scale-50"
+    x-transition:leave-end="opacity-0 scale-50"
   >
     <div class="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
       <div
         class="hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex"
       >
-        <p
-          class="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl italic leading-loose"
+        <div
+          x-data="{dataIcons: ['iconoir:scan-qr-code', 'lucide:code-2', 'solar:code-2-linear'][Math.floor(Math.random() * 3)]}"
         >
-          <span class="iconify h-36 w-36" data-icon="solar:code-2-linear"></span>
+          <!-- 
 
+              const icons = ["iconoir:scan-qr-code", "lucide:code-2", "solar:code-2-linear"];
+
+              <div
+                x-data="{dataIcons: [...icons][Math.floor(Math.random() * icons.length)]}" 
+              >
+          -->
+          <span
+            x-bind:data-icon="dataIcons"
+            class="iconify h-44 w-44 text-primary-950/70 hover:animate-pulse dark:text-primary-200/70"
+          >
+          </span>
+        </div>
       </div>
 
-      <nav class="divide-primary-900/10 dark:divide-primary-300/10 flex flex-col gap-1 divide-y">
+      <nav
+        class="flex flex-col gap-1 divide-y-2 divide-primary-900/10 dark:divide-primary-300/10"
+      >
         {
           links.map(({ number, name, target }) => (
             <a
-              x-on:click='open = false'
+              x-on:click="open = false"
               href={target}
-              class="text-primary-700 dark:text-primary-400 group inline-flex py-6 text-3xl font-medium tracking-tight transition sm:py-8 sm:text-4xl
-              focus-visible:outline-none"
+              class="group inline-flex py-6 text-3xl font-medium tracking-tight text-primary-700 transition focus-visible:outline-none dark:text-primary-400 sm:py-4
+              sm:text-4xl"
             >
               <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-8">
                 <div class="flex items-center gap-6">
-                  <span class="text-xs text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 group-hover:scale-150 transition-transform">{number}</span>
-                  <span 
+                  <span class="text-xs text-primary-700 transition-transform group-hover:scale-150 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200">
+                    {number}
+                  </span>
+                  <span
                     data-after={name}
-                    class="p-4 text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 font-normal
-                    after:content-[attr(data-after)] after:absolute after:left-1/2 after:top-1/2 after:mt-12 after:text-5xl after:z-10 
-                    after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:w-max
-                    after:opacity-5 after:uppercase after:leading-8 after:tracking-tight after:font-medium
-                    group-hover:after:scale-100 group-hover:after:-translate-x-1/2 
-                    group-hover:after:-translate-y-1/2 group-hover:scale-100"
-                    >
-                      {name}
-                    </span>
+                    class="p-4 font-normal text-primary-700 after:absolute after:left-1/2 after:top-1/2
+                    after:z-10 after:mt-12 after:w-max after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:text-5xl 
+                    after:font-medium after:uppercase after:leading-8 after:tracking-tight
+                    after:opacity-5 after:content-[attr(data-after)] group-hover:scale-100 group-hover:text-primary-950 group-hover:after:-translate-x-1/2
+                    group-hover:after:-translate-y-1/2 group-hover:after:scale-100 
+                    dark:text-primary-400 group-hover:dark:text-primary-200"
+                  >
+                    {name}
+                  </span>
                 </div>
-                <svg 
-                  class="text-primary-700 dark:text-primary-400 group-hover:text-primary-950 group-hover:dark:text-primary-200 h-6 w-6 sm:h-8 sm:w-8 group-hover:-translate-x-2 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
+                <svg
+                  class="h-6 w-6 text-primary-700 transition-transform group-hover:-translate-x-2 group-hover:text-primary-950 dark:text-primary-400 group-hover:dark:text-primary-200 sm:h-8 sm:w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path fill="currentColor" d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"/>
+                  <path
+                    fill="currentColor"
+                    d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"
+                  />
                 </svg>
               </div>
             </a>
@@ -200,5 +232,4 @@ const links = [
       </nav>
     </div>
   </div>
-
 </header>

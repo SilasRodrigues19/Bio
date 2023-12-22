@@ -1,6 +1,5 @@
 ---
-
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,38 +9,81 @@ interface Props {
 }
 
 const url = Astro.url.pathname;
-const segments = url.split('/').filter(Boolean);
+const segments = url.split("/").filter(Boolean);
 const lastDynamicSegment = segments.pop();
 
 const { currentPath = lastDynamicSegment! } = Astro.props;
 
+const translations = {
+  social: t("breadcrumb.social"),
+  about: t("breadcrumb.about"),
+  contact: t("breadcrumb.contact"),
+  privacy: t("breadcrumb.privacy"),
+  resume: t("breadcrumb.resume"),
+  en: t("breadcrumb.en"),
+  pt: t("breadcrumb.pt"),
+};
+
+const translatedPath =
+  translations[currentPath as keyof typeof translations] || currentPath;
 ---
 
 <section class="relative pt-36">
-  <nav aria-label='breadcrumb' class="absolute xs:right-6 sm:right-40" id="breadcrumb">
-    <ol class='inline-flex items-center space-x-4 py-2 text-sm font-medium'>
-      {lastDynamicSegment !== '' && (
-        <li class='inline-flex items-center'>
-          <a href={`/${lang}`} 
-             class='text-primary-500 hover:text-primary-600 rounded-sm
-             ocus-visible:outline focus-visible:outline-offset-8 focus-visible:dark:outline-primary-500 focus-visible:outline-primary-600'
-          >
-            Home
-          </a>
-        </li>
-      )}
-      <li class='inline-flex items-center space-x-4'>
-        {lastDynamicSegment !== '' && (
-          <svg class="h-6 w-6 text-primary-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-          </svg>
-        )}
-        <span class='text-primary-700 dark:text-primary-300 capitalize select-none'>
+  <nav
+    aria-label="breadcrumb"
+    class="absolute xs:right-6 sm:right-40"
+    id="breadcrumb"
+  >
+    <ol class="inline-flex items-center space-x-4 py-2 text-sm font-medium">
+      {
+        lastDynamicSegment !== "" && (
+          <li class="inline-flex items-center">
+            <a
+              href={`/${lang}`}
+              class="rounded-sm text-primary-500 hover:text-primary-600
+             focus-visible:outline focus-visible:outline-offset-8 focus-visible:outline-primary-600 focus-visible:dark:outline-primary-500"
+            >
+              {t("breadcrumb.home")}
+            </a>
+          </li>
+        )
+      }
+      <li class="inline-flex items-center space-x-4">
+        {
+          lastDynamicSegment !== "" && (
+            <svg
+              class="h-6 w-6 text-primary-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          )
+        }
+        <span
+          class="select-none capitalize text-primary-950/70 dark:text-primary-200/70"
+        >
           {
-            ['social', 'about', 'contact', 'en', 'pt'].includes(currentPath) ? 
-            currentPath : '404'
+            [
+              "social",
+              "about",
+              "contact",
+              "resume",
+              "privacy",
+              "en",
+              "pt",
+            ].includes(currentPath)
+              ? translatedPath
+              : "404"
           }
-          <span class="sr-only">Current page</span>
+          <span class="sr-only">
+            {t("sr-only-page")}
+          </span>
         </span>
       </li>
     </ol>

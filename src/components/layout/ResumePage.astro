@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import pdf from "/resume.pdf";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t("resume.layout.title")}
+  description={t("resume.layout.description")}
+>
+  <section class="relative py-16 sm:py-32">
+    <div
+      class="mx-auto mt-12 max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8"
+    >
+      <object data={pdf} type="application/pdf" width="1200" height="650">
+        <p
+          class="text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
+        >
+          {t("resume.pdf.unsupported")}
+        </p>
+        <a
+          href={pdf}
+          class="my-4 flex w-1/4 items-center justify-center rounded bg-fuchsia-300 p-3 text-sm font-bold uppercase tracking-wide text-primary-950/60 hover:brightness-90 dark:bg-fuchsia-800 dark:text-primary-200/70"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {
+            t("resume.layout.title")
+              .split(" | ")
+              .map((part, index) => (index === 1 ? part : null))
+              .filter(Boolean)
+          }
+        </a>
+      </object>
+    </div>
+  </section>
+</Layout>
