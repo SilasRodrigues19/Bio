@@ -103,8 +103,14 @@ Technologies used in the project.
 
 ### Tools (Official and unofficial integrations for Astro)
 
+<details close>
+  <summary>Removed non-critical optimization library. (astro-compress)</summary>
+
+  ###### Temporarily removed to fix SSR issue when deploying on Vercel.
+
 - [astro-compress](https://github.com/astro-community/AstroCompress)
   AstroJS compression utilities. Compress CSS, HTML, JavaScript and more!
+</details>
 
 - [astro-link-preview](https://github.com/cijiugechu/astro-link-preview)
   This Astro integration generates preview images for external links.
