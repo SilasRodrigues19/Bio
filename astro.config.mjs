@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import linkPreview from "astro-link-preview";
-import compress from "astro-compress";
+/* import compress from "astro-compress"; */
 
 import vercel from "@astrojs/vercel/serverless";
 
@@ -13,10 +13,10 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     linkPreview(),
-    compress({
+/*     compress({
       SVG: false,
       Exclude: [(File) => File.match(/\/assets\/.*\.svg$/)],
-    }),
+    }), */
   ],
   output: "server",
   adapter: vercel(),
