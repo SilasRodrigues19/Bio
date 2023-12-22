@@ -96,7 +96,7 @@ Technologies used in the project.
 ### SSR Dependencies
 
 - [@sendgrid/mail](https://www.npmjs.com/package/@sendgrid/mail)
-  This is a dedicated service for integration with the email endpoint of the [SendGrid v3 API](https://sendgrid.com/docs/api-reference/) 
+  This is a dedicated service for integration with the email endpoint of the [SendGrid v3 API](https://sendgrid.com/docs/api-reference/)
 
 - [@astrojs/vercel](https://docs.astro.build/pt-br/guides/integrations-guide/vercel/)
   This adapter allows Astro to deploy your SSR site to Vercel.
@@ -106,10 +106,10 @@ Technologies used in the project.
 <details close>
   <summary>Removed non-critical optimization library. (astro-compress)</summary>
 
-  ###### Temporarily removed to fix SSR issue when deploying on Vercel.
+###### Temporarily removed to fix SSR issue when deploying on Vercel.
 
 - [astro-compress](https://github.com/astro-community/AstroCompress)
-  AstroJS compression utilities. Compress CSS, HTML, JavaScript and more!
+AstroJS compression utilities. Compress CSS, HTML, JavaScript and more!
 </details>
 
 - [astro-link-preview](https://github.com/cijiugechu/astro-link-preview)
