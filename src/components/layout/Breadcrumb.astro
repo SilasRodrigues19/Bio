@@ -28,11 +28,11 @@ const translatedPath =
   translations[currentPath as keyof typeof translations] || currentPath;
 ---
 
-<section class="relative pt-36">
+<section class="w-full pt-36">
   <nav
     aria-label="breadcrumb"
-    class="absolute xs:right-6 sm:right-40"
     id="breadcrumb"
+    class="mx-auto flex max-w-2xl items-center justify-end px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8"
   >
     <ol class="inline-flex items-center space-x-4 py-2 text-sm font-medium">
       {
