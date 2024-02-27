@@ -89,8 +89,8 @@ export const ui = {
 
     // Page Components
     "contact.title": "Get in touch",
-    "contact.paragraph-before": "Hate forms? Send us an\u00a0",
-    "contact.paragraph-after": "\u00a0instead.",
+    "contact.paragraph-before": "Hate forms? Send us an",
+    "contact.paragraph-after": "instead.",
     "contact.form.title": "Let's talk!",
     "contact.form.paragraph":
       "Send your message and it will be responded to as quickly as possible.",
@@ -120,6 +120,7 @@ export const ui = {
     "social.label.projects": "Open source projects.",
     "social.label.media": "Social media.",
     "social.label.others": "Others.",
+    "social.label.posts": "Publications.",
     "social.label.support": "Support me.",
     "social.title": "Link me.",
   },
@@ -207,8 +208,8 @@ export const ui = {
 
     // Page Components
     "contact.title": "Contato",
-    "contact.paragraph-before": "Não gosta de formulários? Envie um\u00a0",
-    "contact.paragraph-after": "\u00a0tradicional.",
+    "contact.paragraph-before": "Não gosta de formulários? Envie um",
+    "contact.paragraph-after": "tradicional.",
     "contact.form.title": "Vamos conversar!",
     "contact.form.paragraph":
       "Envie sua mensagem e ela será respondida o mais breve possível.",
@@ -238,6 +239,7 @@ export const ui = {
     "social.label.projects": "Projetos de código aberto.",
     "social.label.media": "Redes sociais.",
     "social.label.others": "Outros.",
+    "social.label.posts": "Publicações.",
     "social.label.support": "Apoie-me.",
     "social.title": "Conectar.",
   },
