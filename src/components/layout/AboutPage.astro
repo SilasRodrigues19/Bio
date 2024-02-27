@@ -4,7 +4,14 @@ import Layout from "@/layouts/Layout.astro";
 
 const currentDate = new Date();
 const myBirthday = new Date("1999-04-22");
-const age = currentDate.getFullYear() - myBirthday.getFullYear();
+
+let age = currentDate.getFullYear() - myBirthday.getFullYear();
+
+currentDate.getMonth() < myBirthday.getMonth() ||
+(currentDate.getMonth() === myBirthday.getMonth() &&
+  currentDate.getDate() < myBirthday.getDate())
+  ? (age -= 1)
+  : age;
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
@@ -30,7 +37,7 @@ const t = useTranslations(lang);
           class="text-lg text-primary-950/70 dark:text-primary-200/70 sm:text-xl"
         >
           <span>{t("about.presentation.paragraph-before")}</span>
-          {"\u00a0" + age + "\u00a0"}
+          {age}
           <span>
             {t("about.presentation.paragraph-after")}
           </span>
