@@ -12,7 +12,7 @@ const t = useTranslations(lang);
   title={t("resume.layout.title")}
   description={t("resume.layout.description")}
 >
-  <section class="relative py-16 sm:py-32">
+  <section class="relative pb-16 sm:pb-20">
     <div
       class="mx-auto mt-12 max-w-2xl px-4 text-left sm:px-6 lg:max-w-7xl lg:px-8"
     >
@@ -22,19 +22,6 @@ const t = useTranslations(lang);
         >
           {t("resume.pdf.unsupported")}
         </p>
-        <a
-          href={pdf}
-          class="my-4 flex w-1/4 items-center justify-center rounded bg-fuchsia-300 p-3 text-sm font-bold uppercase tracking-wide text-primary-950/60 hover:brightness-90 dark:bg-fuchsia-800 dark:text-primary-200/70"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {
-            t("resume.layout.title")
-              .split(" | ")
-              .map((part, index) => (index === 1 ? part : null))
-              .filter(Boolean)
-          }
-        </a>
       </object>
     </div>
   </section>
