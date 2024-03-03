@@ -2,16 +2,9 @@
 import Divider from "@/components/Divider.astro";
 import Layout from "@/layouts/Layout.astro";
 
-const currentDate = new Date();
-const myBirthday = new Date("1999-04-22");
+import { birthday } from "../../utils/birthday";
 
-let age = currentDate.getFullYear() - myBirthday.getFullYear();
-
-currentDate.getMonth() < myBirthday.getMonth() ||
-(currentDate.getMonth() === myBirthday.getMonth() &&
-  currentDate.getDate() < myBirthday.getDate())
-  ? (age -= 1)
-  : age;
+const age = birthday('1999-04-22');
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
