@@ -28,3 +28,6 @@ src/components/Testing.astro
 
 # Deploy
 .vercel
+
+# WebStorm files
+.idea/
