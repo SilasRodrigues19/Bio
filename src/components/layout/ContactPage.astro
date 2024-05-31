@@ -46,8 +46,6 @@ if (Astro.request.method === "POST") {
         .catch((error) => {
           throw new Error(`Error sending email: ${error.message}`);
         });
-
-      return Astro.redirect(`/${lang}/contact/`);
     }
   } catch (error) {
     if (error instanceof Error) throw new Error(error.message);
