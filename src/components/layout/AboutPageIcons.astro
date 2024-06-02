@@ -1,0 +1,17 @@
+---
+import { icons } from "@/data/icons";
+import type { IconProps } from "@/data/icons";
+---
+
+{
+  icons.map(({ icon, width = 30, height = 30 }: IconProps) => (
+    <li>
+      <span
+        class="iconify transition-transform hover:scale-95"
+        data-icon={icon}
+        data-width={width}
+        data-height={height}
+      />
+    </li>
+  ))
+}
